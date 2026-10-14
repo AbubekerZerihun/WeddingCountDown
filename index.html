@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0a2e20">
   <title>Islamic Wedding Countdown — Abdurahman & Sa'ada</title>
-  <meta name="description" content="Celebrating the blessed union of Abdurahman Ahmed and Sa'ada Ali with an interactive 3D Islamic wedding countdown.">
+  <meta name="description"
+    content="Celebrating the blessed union of Abdurahman Ahmed and Sa'ada Ali with an interactive 3D Islamic wedding countdown.">
 
   <!-- Google Fonts: Elegant Serifs, Islamic Arabic Calligraphy, and Ethiopian Amharic Support -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Marcellus&family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Marcellus&family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
 
   <style>
     /* ==========================================================================
@@ -23,13 +26,13 @@
       --card-bg: linear-gradient(145deg, rgba(16, 48, 36, 0.88), rgba(6, 24, 18, 0.95));
       --card-border: rgba(226, 185, 110, 0.35);
       --card-glow: 0 25px 60px -15px rgba(0, 0, 0, 0.75), 0 0 45px rgba(212, 175, 55, 0.22);
-      
+
       --gold-primary: #e6c278;
       --gold-secondary: #c59b3f;
       --gold-light: #fff0c7;
       --gold-gradient: linear-gradient(135deg, #fff3d1 0%, #e5c175 40%, #b88628 75%, #fae29c 100%);
       --gold-foil: linear-gradient(45deg, #d4af37 0%, #fff2b2 25%, #aa771c 50%, #ffd700 75%, #8b6508 100%);
-      
+
       --text-main: #fcf9f2;
       --text-muted: #c9d6cf;
       --text-arabic: #fae4ab;
@@ -108,7 +111,8 @@
       padding: 0;
     }
 
-    html, body {
+    html,
+    body {
       min-height: 100%;
       width: 100%;
       background: #06150f;
@@ -203,6 +207,7 @@
       0% {
         transform: rotate(-4.5deg);
       }
+
       100% {
         transform: rotate(4.5deg);
       }
@@ -282,10 +287,28 @@
       pointer-events: none;
     }
 
-    .corner-tl { top: 18px; left: 18px; }
-    .corner-tr { top: 18px; right: 18px; transform: scaleX(-1); }
-    .corner-bl { bottom: 18px; left: 18px; transform: scaleY(-1); }
-    .corner-br { bottom: 18px; right: 18px; transform: scale(-1); }
+    .corner-tl {
+      top: 18px;
+      left: 18px;
+    }
+
+    .corner-tr {
+      top: 18px;
+      right: 18px;
+      transform: scaleX(-1);
+    }
+
+    .corner-bl {
+      bottom: 18px;
+      left: 18px;
+      transform: scaleY(-1);
+    }
+
+    .corner-br {
+      bottom: 18px;
+      right: 18px;
+      transform: scale(-1);
+    }
 
     /* Bismillah Calligraphy (Top Header) */
     .bismillah-wrapper {
@@ -372,8 +395,18 @@
     }
 
     @keyframes pulseStar {
-      0%, 100% { transform: scale(1); opacity: 0.85; }
-      50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 12px rgba(255, 220, 140, 0.9)); }
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.85;
+      }
+
+      50% {
+        transform: scale(1.15);
+        opacity: 1;
+        filter: drop-shadow(0 0 12px rgba(255, 220, 140, 0.9));
+      }
     }
 
     /* Couple Names Header */
@@ -525,15 +558,19 @@
       .dual-subdates-row {
         gap: 6px;
       }
+
       .subdate-card {
         padding: 7px 4px 6px;
       }
+
       .subdate-val-en {
         font-size: 11.5px;
       }
+
       .subdate-val-ar {
         font-size: 12px;
       }
+
       .amharic-primary-date {
         font-size: 25px;
       }
@@ -685,6 +722,7 @@
         opacity: 0;
         transform: translateZ(10px) scale(0.92);
       }
+
       to {
         opacity: 1;
         transform: translateZ(40px) scale(1);
@@ -815,14 +853,31 @@
     }
 
     @keyframes shake {
-      0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(-4px); }
-      75% { transform: translateX(4px); }
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-4px);
+      }
+
+      75% {
+        transform: translateX(4px);
+      }
     }
 
     @keyframes fadeInControls {
-      from { opacity: 0; transform: translateY(3px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(3px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .theme-picker-pill {
@@ -852,10 +907,21 @@
       transform: scale(1.15);
     }
 
-    .dot-emerald { background: #133e2d; }
-    .dot-midnight { background: #152744; }
-    .dot-rose { background: #4a212b; }
-    .dot-onyx { background: #1c1c20; }
+    .dot-emerald {
+      background: #133e2d;
+    }
+
+    .dot-midnight {
+      background: #152744;
+    }
+
+    .dot-rose {
+      background: #4a212b;
+    }
+
+    .dot-onyx {
+      background: #1c1c20;
+    }
 
     /* ==========================================================================
        DATE PICKER & SETTINGS MODAL
@@ -1028,8 +1094,13 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     /* Responsive adjustments */
@@ -1038,34 +1109,43 @@
         padding: 30px 18px 28px;
         min-height: auto;
       }
+
       .couples-names {
         font-size: 30px;
       }
+
       .time-card-3d {
         padding: 10px 4px 8px;
       }
+
       .digit-number {
         font-size: 26px;
       }
+
       .digit-label {
         font-size: 7.5px;
         letter-spacing: 0.15em;
       }
+
       .lantern-svg {
         width: 44px;
         height: 85px;
       }
+
       .chain {
         height: 60px;
       }
+
       .hanging-lanterns {
         padding: 0 2%;
       }
+
       .floating-controls-bar {
         bottom: 12px;
         padding: 6px 10px;
         gap: 6px;
       }
+
       .ctrl-btn {
         padding: 6px 10px;
         font-size: 10px;
@@ -1092,13 +1172,16 @@
           <path d="M42 20 L58 20 L55 35 L45 35 Z" fill="url(#lanternGold)" />
           <path d="M30 35 Q50 25 70 35 L76 52 L24 52 Z" fill="url(#lanternGold)" />
           <!-- Glass Chamber with Flickering Amber Candle -->
-          <path d="M24 52 L76 52 L68 135 L32 135 Z" fill="rgba(255, 230, 150, 0.15)" stroke="url(#lanternGold)" stroke-width="2" />
+          <path d="M24 52 L76 52 L68 135 L32 135 Z" fill="rgba(255, 230, 150, 0.15)" stroke="url(#lanternGold)"
+            stroke-width="2" />
           <!-- Inner Candle Glow -->
           <circle cx="50" cy="98" r="16" fill="url(#flameGlow)" filter="blur(2px)">
             <animate attributeName="opacity" values="0.75;1;0.8;0.95;0.75" dur="2.4s" repeatCount="indefinite" />
           </circle>
           <path d="M49 84 Q50 78 51 84 Q53 92 47 92 Z" fill="#fff5d0">
-            <animate attributeName="d" values="M49 84 Q50 78 51 84 Q53 92 47 92 Z; M48 83 Q51 77 52 83 Q54 91 48 91 Z; M49 84 Q50 78 51 84 Q53 92 47 92 Z" dur="1.8s" repeatCount="indefinite" />
+            <animate attributeName="d"
+              values="M49 84 Q50 78 51 84 Q53 92 47 92 Z; M48 83 Q51 77 52 83 Q54 91 48 91 Z; M49 84 Q50 78 51 84 Q53 92 47 92 Z"
+              dur="1.8s" repeatCount="indefinite" />
           </path>
           <!-- Ornate Islamic Grille Lines -->
           <path d="M50 52 L50 135 M37 52 L43 135 M63 52 L57 135" stroke="url(#lanternGold)" stroke-width="1.8" />
@@ -1125,11 +1208,13 @@
 
       <div class="lantern-cord lantern-right">
         <div class="chain" style="height: 105px;"></div>
-        <svg class="lantern-svg" style="width: 48px; height: 95px;" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="lantern-svg" style="width: 48px; height: 95px;" viewBox="0 0 100 200" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
           <circle cx="50" cy="12" r="8" stroke="url(#lanternGold)" stroke-width="3" />
           <path d="M42 20 L58 20 L55 35 L45 35 Z" fill="url(#lanternGold)" />
           <path d="M30 35 Q50 25 70 35 L76 52 L24 52 Z" fill="url(#lanternGold)" />
-          <path d="M24 52 L76 52 L68 135 L32 135 Z" fill="rgba(255, 230, 150, 0.15)" stroke="url(#lanternGold)" stroke-width="2" />
+          <path d="M24 52 L76 52 L68 135 L32 135 Z" fill="rgba(255, 230, 150, 0.15)" stroke="url(#lanternGold)"
+            stroke-width="2" />
           <circle cx="50" cy="98" r="16" fill="url(#flameGlow)" filter="blur(2px)">
             <animate attributeName="opacity" values="0.8;0.95;0.7;1;0.8" dur="2.8s" repeatCount="indefinite" />
           </circle>
@@ -1175,7 +1260,8 @@
 
         <!-- Quranic Marriage Ayah (Surah Ar-Rum 30:21) -->
         <div class="quran-ayah" id="quranAyahBox">
-          <p class="ayah-arabic" lang="ar" dir="rtl">«وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً»</p>
+          <p class="ayah-arabic" lang="ar" dir="rtl">«وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+            لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً»</p>
           <div class="ayah-ref">Surah Ar-Rum 30:21</div>
         </div>
 
@@ -1194,29 +1280,44 @@
             </h1>
           </div>
 
-          <p class="invitation-subtitle">Together with our beloved families,<br>joyfully invite you to celebrate our wedding</p>
+          <p class="invitation-subtitle">Together with our beloved families,<br>joyfully invite you to celebrate our
+            wedding</p>
 
           <!-- Dates: Big Amharic + Side-by-Side English (Gregorian) & Arabic/English (Hijri) -->
           <div class="dates-container">
             <div class="save-the-date-tag">Save The Date</div>
-            
+
             <!-- Primary Big Amharic Date -->
-            <div class="amharic-primary-date" id="ethiopianDateDisplay">ኅዳር 8, 2019 E.C</div>
+            <div class="amharic-primary-date" id="ethiopianDateDisplay">
+              ኅዳር 6, 2019 E.C
+            </div>
 
-            <!-- Side-by-Side English (Gregorian) and Arabic/English (Hijri) -->
+            <!-- Gregorian and Hijri Dates -->
             <div class="dual-subdates-row">
-              <!-- Left: Gregorian Calendar (English) -->
+
+              <!-- Gregorian Calendar -->
               <div class="subdate-card" title="Gregorian Calendar (G.C.)">
-                <span class="subdate-label"><span>🗓️</span> G.C.</span>
-                <span class="subdate-val-en" id="gregorianDateDisplay">Tuesday, November 17, 2026</span>
+                <span class="subdate-label">
+                  <span>🗓️</span> G.C.
+                </span>
+                <span class="subdate-val-en" id="gregorianDateDisplay">
+                  Sunday, November 15, 2026
+                </span>
               </div>
 
-              <!-- Right: Hijri Calendar (Arabic & English) -->
+              <!-- Hijri Calendar -->
               <div class="subdate-card" title="Hijri Calendar (A.H.)">
-                <span class="subdate-label"><span>🌙</span> Hijri / هجري</span>
-                <span class="subdate-val-en" id="hijriEnglishDisplay">7 Jumada al-Thani 1448 AH</span>
-                <span class="subdate-val-ar" id="hijriArabicDisplay" lang="ar" dir="rtl">٧ جمادى الآخرة ١٤٤٨ هـ</span>
+                <span class="subdate-label">
+                  <span>🌙</span> Hijri / هجري
+                </span>
+                <span class="subdate-val-en" id="hijriEnglishDisplay">
+                  5 Jumada al-Thani 1448 AH
+                </span>
+                <span class="subdate-val-ar" id="hijriArabicDisplay" lang="ar" dir="rtl">
+                  ٥ جمادى الآخرة ١٤٤٨ هـ
+                </span>
               </div>
+
             </div>
           </div>
 
@@ -1242,8 +1343,10 @@
 
           <!-- Islamic Dua for the Wedding -->
           <div class="wedding-dua">
-            <div class="dua-arabic" lang="ar" dir="rtl">بَارَكَ ٱللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</div>
-            <p class="dua-translation">“May Allah bless you both, shower His blessings upon you, and unite you in goodness.”</p>
+            <div class="dua-arabic" lang="ar" dir="rtl">بَارَكَ ٱللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ
+              بَيْنَكُمَا فِي خَيْرٍ</div>
+            <p class="dua-translation">“May Allah bless you both, shower His blessings upon you, and unite you in
+              goodness.”</p>
           </div>
         </div>
 
@@ -1251,8 +1354,10 @@
         <div class="completion-view" id="completionView" aria-live="polite">
           <div class="rub-el-hizb" style="font-size: 32px; color: var(--gold-primary); margin-bottom: 12px;">۞</div>
           <h2>Alhamdulillah!</h2>
-          <div class="completion-dua" lang="ar" dir="rtl">بَارَكَ ٱللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</div>
-          <p class="completion-text">Our wedding day has arrived! Thank you for surrounding us with your heartfelt prayers and love as we begin our blessed journey together.</p>
+          <div class="completion-dua" lang="ar" dir="rtl">بَارَكَ ٱللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ
+            بَيْنَكُمَا فِي خَيْرٍ</div>
+          <p class="completion-text">Our wedding day has arrived! Thank you for surrounding us with your heartfelt
+            prayers and love as we begin our blessed journey together.</p>
           <button class="ctrl-btn" onclick="resetToCountdown()" style="margin: 0 auto;">View Countdown Again</button>
         </div>
 
@@ -1266,15 +1371,21 @@
     <nav class="floating-controls-bar" aria-label="Wedding Countdown Theme and Settings">
       <!-- Islamic Themes / Templates (Public: visible to all visitors) -->
       <div class="theme-picker-pill" title="Choose Islamic Theme">
-        <div class="theme-dot dot-emerald active" data-theme-name="emerald" title="Royal Emerald & Gold" onclick="setTheme('emerald')"></div>
-        <div class="theme-dot dot-midnight" data-theme-name="midnight" title="Midnight Layla & Celestial Stars" onclick="setTheme('midnight')"></div>
-        <div class="theme-dot dot-rose" data-theme-name="rose" title="Rose Damask & Champagne" onclick="setTheme('rose')"></div>
-        <div class="theme-dot dot-onyx" data-theme-name="onyx" title="Noor Onyx & Gold" onclick="setTheme('onyx')"></div>
+        <div class="theme-dot dot-emerald active" data-theme-name="emerald" title="Royal Emerald & Gold"
+          onclick="setTheme('emerald')"></div>
+        <div class="theme-dot dot-midnight" data-theme-name="midnight" title="Midnight Layla & Celestial Stars"
+          onclick="setTheme('midnight')"></div>
+        <div class="theme-dot dot-rose" data-theme-name="rose" title="Rose Damask & Champagne"
+          onclick="setTheme('rose')"></div>
+        <div class="theme-dot dot-onyx" data-theme-name="onyx" title="Noor Onyx & Gold" onclick="setTheme('onyx')">
+        </div>
       </div>
 
       <!-- Slight / Discreet Admin Lock Button (Only visible when logged out) -->
-      <button class="ctrl-btn-discreet" id="adminLoginBtn" onclick="openLoginModal()" title="Admin Login" aria-label="Admin Login">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <button class="ctrl-btn-discreet" id="adminLoginBtn" onclick="openLoginModal()" title="Admin Login"
+        aria-label="Admin Login">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+          stroke-linejoin="round">
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
           <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
         </svg>
@@ -1303,7 +1414,8 @@
         </button>
 
         <!-- Admin Logout Button -->
-        <button class="ctrl-btn" onclick="adminLogout()" title="Logout Admin" style="border-color: rgba(255, 100, 100, 0.4); color: #ffbcbc;">
+        <button class="ctrl-btn" onclick="adminLogout()" title="Logout Admin"
+          style="border-color: rgba(255, 100, 100, 0.4); color: #ffbcbc;">
           <span>🔓</span>
           <span>Logout</span>
         </button>
@@ -1319,17 +1431,20 @@
       <button class="close-modal-btn" onclick="closeLoginModal()" aria-label="Close login">&times;</button>
       <div style="font-size: 26px; color: var(--gold-primary); margin-bottom: 6px;">🔒</div>
       <h3 class="modal-title" id="loginHeading">Admin Authentication</h3>
-      <p class="modal-desc">Enter your administrator credentials to unlock date changes, petals control, and celebration preview.</p>
+      <p class="modal-desc">Enter your administrator credentials to unlock date changes, petals control, and celebration
+        preview.</p>
 
       <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
         <div class="form-group">
           <label class="form-label" for="adminUsernameInput">Username</label>
-          <input type="text" id="adminUsernameInput" class="form-input" autocomplete="username" placeholder="Username" required>
+          <input type="text" id="adminUsernameInput" class="form-input" autocomplete="username" placeholder="Username"
+            required>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="adminPasswordInput">Password</label>
-          <input type="password" id="adminPasswordInput" class="form-input" autocomplete="current-password" placeholder="Password" required>
+          <input type="password" id="adminPasswordInput" class="form-input" autocomplete="current-password"
+            placeholder="Password" required>
         </div>
 
         <div id="loginErrorMsg" class="login-error-msg" style="display: none;"></div>
@@ -1354,10 +1469,11 @@
       <div class="form-group">
         <label class="form-label" for="weddingDateInput">Wedding Date & Time (Target Variable)</label>
         <input type="datetime-local" id="weddingDateInput" class="form-input">
-        
+
         <!-- Quick Preset Buttons -->
         <div class="preset-chips">
-          <span style="font-size: 9px; color: var(--gold-secondary); margin-right: 4px; align-self: center;">Presets:</span>
+          <span
+            style="font-size: 9px; color: var(--gold-secondary); margin-right: 4px; align-self: center;">Presets:</span>
           <button type="button" class="chip-btn" onclick="addDaysToDate(30)">+30 Days</button>
           <button type="button" class="chip-btn" onclick="addDaysToDate(90)">+3 Months</button>
           <button type="button" class="chip-btn" onclick="addDaysToDate(180)">+6 Months</button>
@@ -1393,7 +1509,7 @@
       // Default wedding target date & time: Tuesday, November 17, 2026 at 4:00 PM EAT
       // (ኅዳር 8, 2019 E.C / 7 Jumada al-Thani 1448 AH)
       defaultDate: '2026-11-17T16:00:00+03:00',
-      
+
       // Default couple names (Ethiopic & Latin supported)
       defaultGroom: 'አብዱረህማን አህመድ',
       defaultBride: 'ሰዓዳ አሊ',
@@ -1493,7 +1609,7 @@
 
     function updateDatesDisplay() {
       const targetDate = new Date(currentWeddingDate);
-      
+
       // 1. Primary Big Amharic / Ethiopian Date
       const ethiopianDateStr = gregorianToEthiopian(targetDate);
       const ethElement = document.getElementById('ethiopianDateDisplay');
