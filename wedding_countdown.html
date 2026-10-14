@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a2e20">
+  <title>Islamic Wedding Countdown — Abdurahman & Sa'ada</title>
+  <meta name="description" content="Celebrating the blessed union of Abdurahman Ahmed and Sa'ada Ali with an interactive 3D Islamic wedding countdown.">
+
+  <!-- Google Fonts: Elegant Serifs, Islamic Arabic Calligraphy, and Ethiopian Amharic Support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Marcellus&family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       ISLAMIC WEDDING THEME VARIABLES (4 EXQUISITE TEMPLATES)
+       ========================================================================== */
+    :root {
+      /* Default Theme: Royal Emerald & Imperial Gold */
+      --bg-gradient: radial-gradient(circle at 50% 20%, #133e2d 0%, #081d14 55%, #040e0a 100%);
+      --card-bg: linear-gradient(145deg, rgba(16, 48, 36, 0.88), rgba(6, 24, 18, 0.95));
+      --card-border: rgba(226, 185, 110, 0.35);
+      --card-glow: 0 25px 60px -15px rgba(0, 0, 0, 0.75), 0 0 45px rgba(212, 175, 55, 0.22);
+      
+      --gold-primary: #e6c278;
+      --gold-secondary: #c59b3f;
+      --gold-light: #fff0c7;
+      --gold-gradient: linear-gradient(135deg, #fff3d1 0%, #e5c175 40%, #b88628 75%, #fae29c 100%);
+      --gold-foil: linear-gradient(45deg, #d4af37 0%, #fff2b2 25%, #aa771c 50%, #ffd700 75%, #8b6508 100%);
+      
+      --text-main: #fcf9f2;
+      --text-muted: #c9d6cf;
+      --text-arabic: #fae4ab;
+      --digit-bg: linear-gradient(180deg, rgba(23, 62, 47, 0.9) 0%, rgba(9, 29, 22, 0.95) 100%);
+      --digit-border: rgba(230, 194, 120, 0.3);
+      --digit-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 240, 199, 0.4);
+      --arch-color: rgba(226, 185, 110, 0.28);
+      --arch-accent: #e5c175;
+      --lantern-glow: rgba(255, 204, 102, 0.85);
+      --pattern-opacity: 0.08;
+    }
+
+    /* Template 2: Midnight Layla & Celestial Starry Gold */
+    [data-theme="midnight"] {
+      --bg-gradient: radial-gradient(circle at 50% 20%, #152238 0%, #0a1120 60%, #03060c 100%);
+      --card-bg: linear-gradient(145deg, rgba(17, 30, 52, 0.9), rgba(8, 15, 28, 0.96));
+      --card-border: rgba(212, 175, 55, 0.38);
+      --card-glow: 0 25px 60px -15px rgba(0, 0, 0, 0.85), 0 0 50px rgba(110, 160, 245, 0.2);
+      --gold-primary: #f0cb79;
+      --gold-secondary: #c99b38;
+      --gold-light: #fff5db;
+      --text-main: #f8fbff;
+      --text-muted: #b9c8de;
+      --text-arabic: #ffe099;
+      --digit-bg: linear-gradient(180deg, rgba(24, 43, 74, 0.9) 0%, rgba(10, 20, 38, 0.95) 100%);
+      --digit-border: rgba(212, 175, 55, 0.35);
+      --arch-color: rgba(212, 175, 55, 0.3);
+      --arch-accent: #f0cb79;
+      --lantern-glow: rgba(255, 218, 128, 0.9);
+      --pattern-opacity: 0.07;
+    }
+
+    /* Template 3: Rose Damask & Champagne Pearl */
+    [data-theme="rose"] {
+      --bg-gradient: radial-gradient(circle at 50% 20%, #3d1c24 0%, #200d13 60%, #10060a 100%);
+      --card-bg: linear-gradient(145deg, rgba(58, 28, 36, 0.9), rgba(28, 12, 17, 0.96));
+      --card-border: rgba(235, 187, 163, 0.4);
+      --card-glow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 50px rgba(220, 130, 145, 0.25);
+      --gold-primary: #f2cbaf;
+      --gold-secondary: #c9886f;
+      --gold-light: #fff2ea;
+      --text-main: #fff7f4;
+      --text-muted: #e0c2be;
+      --text-arabic: #ffd9c5;
+      --digit-bg: linear-gradient(180deg, rgba(74, 35, 45, 0.9) 0%, rgba(36, 16, 22, 0.95) 100%);
+      --digit-border: rgba(235, 187, 163, 0.35);
+      --arch-color: rgba(235, 187, 163, 0.3);
+      --arch-accent: #f2cbaf;
+      --lantern-glow: rgba(255, 190, 160, 0.9);
+      --pattern-opacity: 0.09;
+    }
+
+    /* Template 4: Noor Onyx & Luminous Royal Gold */
+    [data-theme="onyx"] {
+      --bg-gradient: radial-gradient(circle at 50% 20%, #1f1f23 0%, #111114 60%, #050507 100%);
+      --card-bg: linear-gradient(145deg, rgba(28, 28, 33, 0.92), rgba(12, 12, 15, 0.97));
+      --card-border: rgba(240, 203, 115, 0.45);
+      --card-glow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 55px rgba(230, 185, 80, 0.28);
+      --gold-primary: #f7d686;
+      --gold-secondary: #d1a43a;
+      --gold-light: #fff8e1;
+      --text-main: #ffffff;
+      --text-muted: #c9c7be;
+      --text-arabic: #fae4a8;
+      --digit-bg: linear-gradient(180deg, rgba(38, 38, 45, 0.9) 0%, rgba(18, 18, 22, 0.96) 100%);
+      --digit-border: rgba(240, 203, 115, 0.4);
+      --arch-color: rgba(240, 203, 115, 0.32);
+      --arch-accent: #f7d686;
+      --lantern-glow: rgba(255, 215, 110, 0.95);
+      --pattern-opacity: 0.08;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      min-height: 100%;
+      width: 100%;
+      background: #06150f;
+      color: var(--text-main);
+      font-family: 'Cormorant Garamond', 'Noto Sans Ethiopic', Georgia, serif;
+      overflow-x: hidden;
+      perspective: 1400px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Fullscreen 3D Scene Wrapper */
+    .viewport {
+      min-height: 100vh;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 16px 80px;
+      background: var(--bg-gradient);
+      overflow: hidden;
+      transition: background 0.8s ease;
+    }
+
+    /* Subtle Islamic Geometric Arabesque Background Pattern */
+    .arabesque-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M40 0l40 40-40 40L0 40z' fill='none' stroke='%23d4af37' stroke-width='0.8'/%3E%3Ccircle cx='40' cy='40' r='12' fill='none' stroke='%23d4af37' stroke-width='0.7'/%3E%3Cpath d='M40 28l4 8 8 4-8 4-4 8-4-8-8-4 8-4z' fill='%23d4af37'/%3E%3Ccircle cx='0' cy='0' r='8' fill='none' stroke='%23d4af37' stroke-width='0.6'/%3E%3Ccircle cx='80' cy='0' r='8' fill='none' stroke='%23d4af37' stroke-width='0.6'/%3E%3Ccircle cx='0' cy='80' r='8' fill='none' stroke='%23d4af37' stroke-width='0.6'/%3E%3Ccircle cx='80' cy='80' r='8' fill='none' stroke='%23d4af37' stroke-width='0.6'/%3E%3C/g%3E%3C/svg%3E");
+      opacity: var(--pattern-opacity);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* 3D Floating Particle Canvas (Petals & Golden Stardust) */
+    #particlesCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* 3D Swaying Islamic Lanterns (Fanous) */
+    .hanging-lanterns {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 280px;
+      pointer-events: none;
+      z-index: 6;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 4%;
+      overflow: visible;
+    }
+
+    .lantern-cord {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform-origin: top center;
+    }
+
+    .lantern-left {
+      animation: swingLantern 5.4s ease-in-out infinite alternate;
+    }
+
+    .lantern-right {
+      animation: swingLantern 6.2s ease-in-out infinite alternate-reverse;
+    }
+
+    .chain {
+      width: 2px;
+      height: 80px;
+      background: repeating-linear-gradient(to bottom, #cf9d3a 0, #cf9d3a 3px, transparent 3px, transparent 6px);
+      box-shadow: 0 0 4px rgba(255, 215, 0, 0.4);
+    }
+
+    .lantern-svg {
+      width: 58px;
+      height: 110px;
+      filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 20px var(--lantern-glow));
+      transition: filter 0.8s ease;
+    }
+
+    @keyframes swingLantern {
+      0% {
+        transform: rotate(-4.5deg);
+      }
+      100% {
+        transform: rotate(4.5deg);
+      }
+    }
+
+    /* 3D CARD CONTAINER WITH PERSPECTIVE & TILT */
+    .card-container {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      margin: 20px auto;
+      z-index: 5;
+      transform-style: preserve-3d;
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    /* Main Invitation Card */
+    .invitation-card {
+      position: relative;
+      width: 100%;
+      min-height: 720px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      box-shadow: var(--card-glow);
+      padding: 38px 28px 36px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transform-style: preserve-3d;
+      transition: all 0.5s ease;
+      overflow: hidden;
+    }
+
+    /* Dynamic 3D Glare/Specular Highlight */
+    .glare-overlay {
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.16) 0%, transparent 65%);
+      pointer-events: none;
+      opacity: 0.75;
+      mix-blend-mode: overlay;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Ornate Islamic Arch (Mihrab) Frame */
+    .islamic-arch-frame {
+      position: absolute;
+      inset: 12px;
+      border: 1px solid var(--arch-color);
+      border-radius: 20px;
+      pointer-events: none;
+      z-index: 1;
+      transform: translateZ(10px);
+    }
+
+    .islamic-arch-frame::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px dashed rgba(226, 185, 110, 0.22);
+      border-radius: 16px;
+    }
+
+    /* Islamic Corner Ornaments */
+    .corner-ornament {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      color: var(--gold-primary);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .corner-tl { top: 18px; left: 18px; }
+    .corner-tr { top: 18px; right: 18px; transform: scaleX(-1); }
+    .corner-bl { bottom: 18px; left: 18px; transform: scaleY(-1); }
+    .corner-br { bottom: 18px; right: 18px; transform: scale(-1); }
+
+    /* Bismillah Calligraphy (Top Header) */
+    .bismillah-wrapper {
+      position: relative;
+      margin-bottom: 12px;
+      z-index: 2;
+      transform: translateZ(25px);
+    }
+
+    .bismillah-arabic {
+      font-family: 'Amiri', 'Traditional Arabic', serif;
+      font-size: clamp(23px, 5.5vw, 29px);
+      color: var(--text-arabic);
+      text-shadow: 0 0 15px rgba(230, 194, 120, 0.5), 0 2px 4px rgba(0, 0, 0, 0.8);
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+      display: inline-block;
+      transition: color 0.5s ease;
+    }
+
+    .bismillah-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--gold-primary);
+      margin-top: 3px;
+      opacity: 0.85;
+    }
+
+    /* Quranic Verse Ribbon */
+    .quran-ayah {
+      max-width: 420px;
+      margin: 4px auto 14px;
+      padding: 8px 14px;
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(226, 185, 110, 0.2);
+      border-radius: 30px;
+      transform: translateZ(18px);
+      z-index: 2;
+    }
+
+    .ayah-arabic {
+      font-family: 'Amiri', serif;
+      font-size: 13.5px;
+      color: var(--gold-light);
+      line-height: 1.5;
+      margin-bottom: 2px;
+    }
+
+    .ayah-ref {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8px;
+      color: var(--gold-secondary);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* Decorative Divider with Rub el Hizb (Islamic 8-pointed star) */
+    .star-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      width: 75%;
+      margin: 8px auto 14px;
+      color: var(--gold-primary);
+      transform: translateZ(20px);
+    }
+
+    .star-divider::before,
+    .star-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-secondary), transparent);
+    }
+
+    .rub-el-hizb {
+      font-size: 18px;
+      display: inline-block;
+      filter: drop-shadow(0 0 6px rgba(230, 194, 120, 0.6));
+      animation: pulseStar 3.5s ease-in-out infinite;
+    }
+
+    @keyframes pulseStar {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 12px rgba(255, 220, 140, 0.9)); }
+    }
+
+    /* Couple Names Header */
+    .names-section {
+      transform: translateZ(35px);
+      margin-bottom: 8px;
+      z-index: 2;
+    }
+
+    .couples-names {
+      font-weight: 700;
+      font-size: clamp(34px, 8.5vw, 46px);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      background: var(--gold-foil);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      margin: 0;
+      font-family: 'Noto Sans Ethiopic', 'Cormorant Garamond', serif;
+    }
+
+    .ampersand {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: 0.85em;
+      color: var(--gold-primary);
+      -webkit-text-fill-color: initial;
+      margin: 0 4px;
+      filter: drop-shadow(0 0 8px rgba(226, 185, 110, 0.5));
+    }
+
+    .invitation-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.26em;
+      line-height: 1.8;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 10px 0 12px;
+      transform: translateZ(22px);
+    }
+
+    /* Date Badges: Big Amharic + Side-by-Side Gregorian & Hijri */
+    .dates-container {
+      margin: 10px 0 18px;
+      transform: translateZ(28px);
+      z-index: 2;
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .save-the-date-tag {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 9.5px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 6px;
+      padding: 3px 12px;
+      border: 1px solid rgba(226, 185, 110, 0.3);
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    /* Primary Big Amharic Date */
+    .amharic-primary-date {
+      font-family: 'Noto Sans Ethiopic', 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 6.8vw, 38px);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.18;
+      background: var(--gold-foil);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.75));
+      margin: 4px 0 10px;
+    }
+
+    /* Side-by-Side Dual Sub-dates: English (Gregorian) & Arabic/English (Hijri) */
+    .dual-subdates-row {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .subdate-card {
+      flex: 1;
+      min-width: 0;
+      background: rgba(0, 0, 0, 0.32);
+      border: 1px solid rgba(226, 185, 110, 0.28);
+      border-radius: 14px;
+      padding: 9px 8px 8px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .subdate-card:hover {
+      border-color: var(--gold-primary);
+      background: rgba(0, 0, 0, 0.45);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+    }
+
+    .subdate-label {
+      font-family: 'Cinzel', 'Montserrat', sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-secondary);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .subdate-val-en {
+      font-family: 'Marcellus', 'Cinzel', 'Playfair Display', serif;
+      font-size: clamp(12.5px, 2.7vw, 14.5px);
+      font-weight: 400;
+      color: var(--gold-light);
+      letter-spacing: 0.035em;
+      line-height: 1.35;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .subdate-val-ar {
+      font-family: 'Amiri', serif;
+      font-size: 13.5px;
+      color: var(--gold-primary);
+      margin-top: 2px;
+      direction: rtl;
+      line-height: 1.25;
+      text-shadow: 0 0 6px rgba(226, 185, 110, 0.25);
+    }
+
+    @media (max-width: 440px) {
+      .dual-subdates-row {
+        gap: 6px;
+      }
+      .subdate-card {
+        padding: 7px 4px 6px;
+      }
+      .subdate-val-en {
+        font-size: 11.5px;
+      }
+      .subdate-val-ar {
+        font-size: 12px;
+      }
+      .amharic-primary-date {
+        font-size: 25px;
+      }
+    }
+
+    /* 3D COUNTDOWN GRID */
+    .countdown-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 14px 0 22px;
+      transform: translateZ(42px);
+      z-index: 3;
+    }
+
+    .time-card-3d {
+      position: relative;
+      background: var(--digit-bg);
+      border: 1px solid var(--digit-border);
+      border-radius: 16px;
+      padding: 14px 6px 12px;
+      box-shadow: var(--digit-shadow);
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .time-card-3d:hover {
+      transform: translateZ(12px) scale(1.04);
+      border-color: var(--gold-primary);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(230, 194, 120, 0.35);
+    }
+
+    /* 3D Inset Horizon Line across digit */
+    .time-card-3d::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.6), transparent);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .digit-number {
+      display: block;
+      font-family: 'Cinzel', 'Noto Sans Ethiopic', sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 6.5vw, 36px);
+      font-variant-numeric: tabular-nums;
+      line-height: 1.1;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+      transform: translateZ(15px);
+    }
+
+    .digit-label {
+      display: block;
+      margin-top: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-muted);
+      transform: translateZ(10px);
+    }
+
+    /* Quranic Dua & Closing Quote */
+    .wedding-dua {
+      transform: translateZ(25px);
+      margin-top: 2px;
+      padding: 0 10px;
+      z-index: 2;
+    }
+
+    .dua-arabic {
+      font-family: 'Amiri', serif;
+      font-size: 17px;
+      color: var(--gold-primary);
+      margin-bottom: 4px;
+      line-height: 1.5;
+      text-shadow: 0 0 10px rgba(226, 185, 110, 0.3);
+    }
+
+    .dua-translation {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Footer Tagline */
+    .card-footer-note {
+      transform: translateZ(18px);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold-secondary);
+      margin-top: 18px;
+      opacity: 0.85;
+    }
+
+    /* COMPLETION VIEW (WHEN COUNTDOWN HITS ZERO) */
+    .completion-view {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 10px;
+      transform: translateZ(40px);
+      animation: fadeInScale 1s ease forwards;
+    }
+
+    .completion-view h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(34px, 8vw, 46px);
+      background: var(--gold-foil);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+
+    .completion-dua {
+      font-family: 'Amiri', serif;
+      font-size: 24px;
+      color: var(--gold-primary);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .completion-text {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 360px;
+      margin: 0 auto 18px;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: translateZ(10px) scale(0.92);
+      }
+      to {
+        opacity: 1;
+        transform: translateZ(40px) scale(1);
+      }
+    }
+
+    /* ==========================================================================
+       BOTTOM CONTROLS BAR: TEMPLATE SWITCHER & DATE INPUT VARIABLE
+       ========================================================================== */
+    .floating-controls-bar {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(10, 24, 18, 0.85);
+      border: 1px solid rgba(226, 185, 110, 0.4);
+      padding: 8px 14px;
+      border-radius: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.25);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: all 0.3s ease;
+      max-width: 95vw;
+    }
+
+    .ctrl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(226, 185, 110, 0.14);
+      color: var(--gold-light);
+      border: 1px solid rgba(226, 185, 110, 0.3);
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .ctrl-btn:hover {
+      background: rgba(226, 185, 110, 0.3);
+      color: #fff;
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    }
+
+    .ctrl-btn.active {
+      background: var(--gold-primary);
+      color: #0c1a13;
+      border-color: #fff;
+      font-weight: 700;
+    }
+
+    /* Discreet Admin Button */
+    .ctrl-btn-discreet {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 1px solid rgba(226, 185, 110, 0.18);
+      color: rgba(226, 185, 110, 0.45);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-left: 4px;
+      transition: all 0.25s ease;
+      padding: 0;
+    }
+
+    .ctrl-btn-discreet:hover {
+      border-color: rgba(226, 185, 110, 0.7);
+      color: var(--gold-light);
+      background: rgba(226, 185, 110, 0.15);
+      transform: scale(1.08);
+      box-shadow: 0 0 8px rgba(226, 185, 110, 0.3);
+    }
+
+    .ctrl-btn-discreet svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    /* Admin Action Group (Hidden by default for guests) */
+    .admin-controls-group {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      animation: fadeInControls 0.3s ease;
+    }
+
+    .admin-controls-group.visible {
+      display: flex;
+    }
+
+    .admin-badge {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold-primary);
+      background: rgba(226, 185, 110, 0.15);
+      border: 1px solid rgba(226, 185, 110, 0.3);
+      padding: 2px 7px;
+      border-radius: 10px;
+    }
+
+    .login-error-msg {
+      color: #ff8b8b;
+      background: rgba(255, 60, 60, 0.15);
+      border: 1px solid rgba(255, 100, 100, 0.35);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 11px;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 10px;
+      text-align: center;
+      animation: shake 0.3s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      75% { transform: translateX(4px); }
+    }
+
+    @keyframes fadeInControls {
+      from { opacity: 0; transform: translateY(3px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .theme-picker-pill {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .theme-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      position: relative;
+    }
+
+    .theme-dot:hover {
+      transform: scale(1.2);
+      border-color: #fff;
+    }
+
+    .theme-dot.active {
+      border-color: #fff;
+      box-shadow: 0 0 10px #fff;
+      transform: scale(1.15);
+    }
+
+    .dot-emerald { background: #133e2d; }
+    .dot-midnight { background: #152744; }
+    .dot-rose { background: #4a212b; }
+    .dot-onyx { background: #1c1c20; }
+
+    /* ==========================================================================
+       DATE PICKER & SETTINGS MODAL
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .settings-modal {
+      width: 100%;
+      max-width: 460px;
+      background: linear-gradient(150deg, #132b20, #091711);
+      border: 1px solid var(--gold-primary);
+      border-radius: 24px;
+      padding: 28px 24px 22px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.3);
+      color: #fff;
+      position: relative;
+    }
+
+    .modal-title {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      color: var(--gold-primary);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .modal-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      color: #b5c7bd;
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .form-label {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .form-input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(226, 185, 110, 0.4);
+      border-radius: 12px;
+      padding: 10px 14px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-input:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 12px rgba(230, 194, 120, 0.4);
+    }
+
+    .preset-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .chip-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(226, 185, 110, 0.25);
+      color: var(--gold-light);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9.5px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .chip-btn:hover {
+      background: rgba(226, 185, 110, 0.25);
+      border-color: var(--gold-primary);
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .btn-primary {
+      flex: 2;
+      background: linear-gradient(135deg, #e5c175, #b88628);
+      color: #0c1a13;
+      border: none;
+      padding: 12px;
+      border-radius: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 12px;
+      border-radius: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .close-modal-btn {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: none;
+      border: none;
+      color: var(--gold-light);
+      font-size: 22px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+    }
+
+    .close-modal-btn:hover {
+      opacity: 1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 580px) {
+      .invitation-card {
+        padding: 30px 18px 28px;
+        min-height: auto;
+      }
+      .couples-names {
+        font-size: 30px;
+      }
+      .time-card-3d {
+        padding: 10px 4px 8px;
+      }
+      .digit-number {
+        font-size: 26px;
+      }
+      .digit-label {
+        font-size: 7.5px;
+        letter-spacing: 0.15em;
+      }
+      .lantern-svg {
+        width: 44px;
+        height: 85px;
+      }
+      .chain {
+        height: 60px;
+      }
+      .hanging-lanterns {
+        padding: 0 2%;
+      }
+      .floating-controls-bar {
+        bottom: 12px;
+        padding: 6px 10px;
+        gap: 6px;
+      }
+      .ctrl-btn {
+        padding: 6px 10px;
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="viewport" id="viewport">
+    <!-- Subtle Arabesque Geometric Pattern -->
+    <div class="arabesque-bg" aria-hidden="true"></div>
+
+    <!-- 3D Particle Canvas for Falling Rose Petals & Golden Stardust -->
+    <canvas id="particlesCanvas" aria-hidden="true"></canvas>
+
+    <!-- 3D Hanging Islamic Lanterns (Fanous) with Realistic Glow -->
+    <div class="hanging-lanterns" aria-hidden="true">
+      <div class="lantern-cord lantern-left">
+        <div class="chain"></div>
+        <svg class="lantern-svg" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Lantern Cap & Top Ring -->
+          <circle cx="50" cy="12" r="8" stroke="url(#lanternGold)" stroke-width="3" />
+          <path d="M42 20 L58 20 L55 35 L45 35 Z" fill="url(#lanternGold)" />
+          <path d="M30 35 Q50 25 70 35 L76 52 L24 52 Z" fill="url(#lanternGold)" />
+          <!-- Glass Chamber with Flickering Amber Candle -->
+          <path d="M24 52 L76 52 L68 135 L32 135 Z" fill="rgba(255, 230, 150, 0.15)" stroke="url(#lanternGold)" stroke-width="2" />
+          <!-- Inner Candle Glow -->
+          <circle cx="50" cy="98" r="16" fill="url(#flameGlow)" filter="blur(2px)">
+            <animate attributeName="opacity" values="0.75;1;0.8;0.95;0.75" dur="2.4s" repeatCount="indefinite" />
+          </circle>
+          <path d="M49 84 Q50 78 51 84 Q53 92 47 92 Z" fill="#fff5d0">
+            <animate attributeName="d" values="M49 84 Q50 78 51 84 Q53 92 47 92 Z; M48 83 Q51 77 52 83 Q54 91 48 91 Z; M49 84 Q50 78 51 84 Q53 92 47 92 Z" dur="1.8s" repeatCount="indefinite" />
+          </path>
+          <!-- Ornate Islamic Grille Lines -->
+          <path d="M50 52 L50 135 M37 52 L43 135 M63 52 L57 135" stroke="url(#lanternGold)" stroke-width="1.8" />
+          <!-- Bottom Base & Tassel -->
+          <path d="M32 135 L68 135 L60 152 L40 152 Z" fill="url(#lanternGold)" />
+          <circle cx="50" cy="156" r="4" fill="url(#lanternGold)" />
+          <path d="M50 160 L50 188 M46 188 L54 188" stroke="url(#lanternGold)" stroke-width="2" />
+          <defs>
+            <linearGradient id="lanternGold" x1="0" y1="0" x2="100" y2="200" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#fff0c4" />
+              <stop offset="0.4" stop-color="#e0be70" />
+              <stop offset="0.8" stop-color="#a87d26" />
+              <stop offset="1" stop-color="#ffe699" />
+            </linearGradient>
+            <radialGradient id="flameGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+              <stop offset="30%" stop-color="#ffdc73" stop-opacity="0.9" />
+              <stop offset="70%" stop-color="#ff9900" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="#ff6600" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="lantern-cord lantern-right">
+        <div class="chain" style="height: 105px;"></div>
+        <svg class="lantern-svg" style="width: 48px; height: 95px;" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="12" r="8" stroke="url(#lanternGold)" stroke-width="3" />
+          <path d="M42 20 L58 20 L55 35 L45 35 Z" fill="url(#lanternGold)" />
+          <path d="M30 35 Q50 25 70 35 L76 52 L24 52 Z" fill="url(#lanternGold)" />
+          <path d="M24 52 L76 52 L68 135 L32 135 Z" fill="rgba(255, 230, 150, 0.15)" stroke="url(#lanternGold)" stroke-width="2" />
+          <circle cx="50" cy="98" r="16" fill="url(#flameGlow)" filter="blur(2px)">
+            <animate attributeName="opacity" values="0.8;0.95;0.7;1;0.8" dur="2.8s" repeatCount="indefinite" />
+          </circle>
+          <path d="M49 84 Q50 78 51 84 Q53 92 47 92 Z" fill="#fff5d0" />
+          <path d="M50 52 L50 135 M37 52 L43 135 M63 52 L57 135" stroke="url(#lanternGold)" stroke-width="1.8" />
+          <path d="M32 135 L68 135 L60 152 L40 152 Z" fill="url(#lanternGold)" />
+          <circle cx="50" cy="156" r="4" fill="url(#lanternGold)" />
+          <path d="M50 160 L50 188 M46 188 L54 188" stroke="url(#lanternGold)" stroke-width="2" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- 3D INTERACTIVE TILT CONTAINER -->
+    <div class="card-container" id="cardContainer">
+      <main class="invitation-card" id="invitationCard" aria-label="Islamic Wedding Invitation and Countdown">
+        <!-- Specular 3D Glare effect -->
+        <div class="glare-overlay" id="glareOverlay"></div>
+
+        <!-- Ornate Islamic Arch (Mihrab) Border with Corner Motifs -->
+        <div class="islamic-arch-frame" aria-hidden="true"></div>
+        <svg class="corner-ornament corner-tl" viewBox="0 0 40 40" fill="currentColor">
+          <path d="M4 4 h20 v3 h-17 v17 h-3 z M12 12 h10 v2 h-8 v8 h-2 z" opacity="0.9" />
+          <circle cx="8" cy="8" r="2.5" />
+        </svg>
+        <svg class="corner-ornament corner-tr" viewBox="0 0 40 40" fill="currentColor">
+          <path d="M4 4 h20 v3 h-17 v17 h-3 z M12 12 h10 v2 h-8 v8 h-2 z" opacity="0.9" />
+          <circle cx="8" cy="8" r="2.5" />
+        </svg>
+        <svg class="corner-ornament corner-bl" viewBox="0 0 40 40" fill="currentColor">
+          <path d="M4 4 h20 v3 h-17 v17 h-3 z M12 12 h10 v2 h-8 v8 h-2 z" opacity="0.9" />
+          <circle cx="8" cy="8" r="2.5" />
+        </svg>
+        <svg class="corner-ornament corner-br" viewBox="0 0 40 40" fill="currentColor">
+          <path d="M4 4 h20 v3 h-17 v17 h-3 z M12 12 h10 v2 h-8 v8 h-2 z" opacity="0.9" />
+          <circle cx="8" cy="8" r="2.5" />
+        </svg>
+
+        <!-- Bismillah Header -->
+        <div class="bismillah-wrapper">
+          <div class="bismillah-arabic" lang="ar" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+          <div class="bismillah-sub">In the Name of Allah, the Most Gracious, the Most Merciful</div>
+        </div>
+
+        <!-- Quranic Marriage Ayah (Surah Ar-Rum 30:21) -->
+        <div class="quran-ayah" id="quranAyahBox">
+          <p class="ayah-arabic" lang="ar" dir="rtl">«وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً»</p>
+          <div class="ayah-ref">Surah Ar-Rum 30:21</div>
+        </div>
+
+        <!-- Rub el Hizb 8-point Islamic Star Divider -->
+        <div class="star-divider" aria-hidden="true">
+          <span class="rub-el-hizb">۞</span>
+        </div>
+
+        <!-- COUNTDOWN ACTIVE VIEW -->
+        <div id="activeCountdownView" style="width: 100%;">
+          <div class="names-section">
+            <h1 class="couples-names" id="coupleNamesHeading">
+              <span id="groomDisplay">አብዱረህማን አህመድ</span>
+              <span class="ampersand">&amp;</span>
+              <span id="brideDisplay">ሰዓዳ አሊ</span>
+            </h1>
+          </div>
+
+          <p class="invitation-subtitle">Together with our beloved families,<br>joyfully invite you to celebrate our wedding</p>
+
+          <!-- Dates: Big Amharic + Side-by-Side English (Gregorian) & Arabic/English (Hijri) -->
+          <div class="dates-container">
+            <div class="save-the-date-tag">Save The Date</div>
+            
+            <!-- Primary Big Amharic Date -->
+            <div class="amharic-primary-date" id="ethiopianDateDisplay">ኅዳር 8, 2019 E.C</div>
+
+            <!-- Side-by-Side English (Gregorian) and Arabic/English (Hijri) -->
+            <div class="dual-subdates-row">
+              <!-- Left: Gregorian Calendar (English) -->
+              <div class="subdate-card" title="Gregorian Calendar (G.C.)">
+                <span class="subdate-label"><span>🗓️</span> G.C.</span>
+                <span class="subdate-val-en" id="gregorianDateDisplay">Tuesday, November 17, 2026</span>
+              </div>
+
+              <!-- Right: Hijri Calendar (Arabic & English) -->
+              <div class="subdate-card" title="Hijri Calendar (A.H.)">
+                <span class="subdate-label"><span>🌙</span> Hijri / هجري</span>
+                <span class="subdate-val-en" id="hijriEnglishDisplay">7 Jumada al-Thani 1448 AH</span>
+                <span class="subdate-val-ar" id="hijriArabicDisplay" lang="ar" dir="rtl">٧ جمادى الآخرة ١٤٤٨ هـ</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3D Countdown Podiums -->
+          <div class="countdown-grid" role="timer" aria-live="off">
+            <div class="time-card-3d">
+              <span class="digit-number" id="daysVal">000</span>
+              <span class="digit-label">Days</span>
+            </div>
+            <div class="time-card-3d">
+              <span class="digit-number" id="hoursVal">00</span>
+              <span class="digit-label">Hours</span>
+            </div>
+            <div class="time-card-3d">
+              <span class="digit-number" id="minutesVal">00</span>
+              <span class="digit-label">Minutes</span>
+            </div>
+            <div class="time-card-3d">
+              <span class="digit-number" id="secondsVal">00</span>
+              <span class="digit-label">Seconds</span>
+            </div>
+          </div>
+
+          <!-- Islamic Dua for the Wedding -->
+          <div class="wedding-dua">
+            <div class="dua-arabic" lang="ar" dir="rtl">بَارَكَ ٱللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</div>
+            <p class="dua-translation">“May Allah bless you both, shower His blessings upon you, and unite you in goodness.”</p>
+          </div>
+        </div>
+
+        <!-- COMPLETION / CELEBRATION VIEW -->
+        <div class="completion-view" id="completionView" aria-live="polite">
+          <div class="rub-el-hizb" style="font-size: 32px; color: var(--gold-primary); margin-bottom: 12px;">۞</div>
+          <h2>Alhamdulillah!</h2>
+          <div class="completion-dua" lang="ar" dir="rtl">بَارَكَ ٱللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</div>
+          <p class="completion-text">Our wedding day has arrived! Thank you for surrounding us with your heartfelt prayers and love as we begin our blessed journey together.</p>
+          <button class="ctrl-btn" onclick="resetToCountdown()" style="margin: 0 auto;">View Countdown Again</button>
+        </div>
+
+        <div class="card-footer-note">A Blessed Union · Bound in Love & Mercy</div>
+      </main>
+    </div>
+
+    <!-- ========================================================================
+         FLOATING CONTROLS BAR: TEMPLATE SELECTOR & ADMIN ACCESS
+         ======================================================================== -->
+    <nav class="floating-controls-bar" aria-label="Wedding Countdown Theme and Settings">
+      <!-- Islamic Themes / Templates (Public: visible to all visitors) -->
+      <div class="theme-picker-pill" title="Choose Islamic Theme">
+        <div class="theme-dot dot-emerald active" data-theme-name="emerald" title="Royal Emerald & Gold" onclick="setTheme('emerald')"></div>
+        <div class="theme-dot dot-midnight" data-theme-name="midnight" title="Midnight Layla & Celestial Stars" onclick="setTheme('midnight')"></div>
+        <div class="theme-dot dot-rose" data-theme-name="rose" title="Rose Damask & Champagne" onclick="setTheme('rose')"></div>
+        <div class="theme-dot dot-onyx" data-theme-name="onyx" title="Noor Onyx & Gold" onclick="setTheme('onyx')"></div>
+      </div>
+
+      <!-- Slight / Discreet Admin Lock Button (Only visible when logged out) -->
+      <button class="ctrl-btn-discreet" id="adminLoginBtn" onclick="openLoginModal()" title="Admin Login" aria-label="Admin Login">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </button>
+
+      <!-- Admin Actions Group (Visible ONLY when logged in as admin) -->
+      <div id="adminControlsGroup" class="admin-controls-group">
+        <div style="width: 1px; height: 18px; background: rgba(226, 185, 110, 0.3);"></div>
+        <span class="admin-badge">Admin</span>
+
+        <!-- Change Date Button -->
+        <button class="ctrl-btn" id="openSettingsBtn" onclick="openSettingsModal()">
+          <span>📅</span>
+          <span>Change Date</span>
+        </button>
+
+        <!-- Toggle 3D Petals Button -->
+        <button class="ctrl-btn" id="togglePetalsBtn" onclick="toggleParticles()" title="Toggle 3D Falling Petals">
+          <span>🌸</span>
+          <span id="petalsLabel">Petals On</span>
+        </button>
+
+        <!-- Preview Celebration Screen -->
+        <button class="ctrl-btn" onclick="previewCelebration()" title="Preview Marriage Day Screen">
+          <span>🎉</span>
+        </button>
+
+        <!-- Admin Logout Button -->
+        <button class="ctrl-btn" onclick="adminLogout()" title="Logout Admin" style="border-color: rgba(255, 100, 100, 0.4); color: #ffbcbc;">
+          <span>🔓</span>
+          <span>Logout</span>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ==========================================================================
+       ADMIN LOGIN MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginHeading">
+    <div class="settings-modal" style="max-width: 380px;">
+      <button class="close-modal-btn" onclick="closeLoginModal()" aria-label="Close login">&times;</button>
+      <div style="font-size: 26px; color: var(--gold-primary); margin-bottom: 6px;">🔒</div>
+      <h3 class="modal-title" id="loginHeading">Admin Authentication</h3>
+      <p class="modal-desc">Enter your administrator credentials to unlock date changes, petals control, and celebration preview.</p>
+
+      <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+        <div class="form-group">
+          <label class="form-label" for="adminUsernameInput">Username</label>
+          <input type="text" id="adminUsernameInput" class="form-input" autocomplete="username" placeholder="Username" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="adminPasswordInput">Password</label>
+          <input type="password" id="adminPasswordInput" class="form-input" autocomplete="current-password" placeholder="Password" required>
+        </div>
+
+        <div id="loginErrorMsg" class="login-error-msg" style="display: none;"></div>
+
+        <div class="modal-actions" style="margin-top: 18px;">
+          <button type="submit" class="btn-primary" style="flex: 1;">Login</button>
+          <button type="button" class="btn-secondary" onclick="closeLoginModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       DATE & SETTINGS MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+    <div class="settings-modal">
+      <button class="close-modal-btn" onclick="closeSettingsModal()" aria-label="Close settings">&times;</button>
+      <h3 class="modal-title" id="modalHeading">Countdown Settings</h3>
+      <p class="modal-desc">Customize the wedding end date, couple names, and theme instantly.</p>
+
+      <div class="form-group">
+        <label class="form-label" for="weddingDateInput">Wedding Date & Time (Target Variable)</label>
+        <input type="datetime-local" id="weddingDateInput" class="form-input">
+        
+        <!-- Quick Preset Buttons -->
+        <div class="preset-chips">
+          <span style="font-size: 9px; color: var(--gold-secondary); margin-right: 4px; align-self: center;">Presets:</span>
+          <button type="button" class="chip-btn" onclick="addDaysToDate(30)">+30 Days</button>
+          <button type="button" class="chip-btn" onclick="addDaysToDate(90)">+3 Months</button>
+          <button type="button" class="chip-btn" onclick="addDaysToDate(180)">+6 Months</button>
+          <button type="button" class="chip-btn" onclick="resetToDefaultDate()">Original (Nov 17, 2026)</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="groomInput">Groom's Name</label>
+        <input type="text" id="groomInput" class="form-input" value="አብዱረህማን አህመድ">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="brideInput">Bride's Name</label>
+        <input type="text" id="brideInput" class="form-input" value="ሰዓዳ አሊ">
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-primary" onclick="saveSettings()">Apply &amp; Save</button>
+        <button type="button" class="btn-secondary" onclick="copyShareLink()">Copy Link</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ==========================================================================
+       1. WEDDING CONFIGURATION VARIABLE
+       --------------------------------------------------------------------------
+       You can edit this variable directly in code, or use the in-page "Change Date"
+       button which saves to localStorage and URL parameters!
+       ========================================================================== */
+    const WEDDING_CONFIG = {
+      // Default wedding target date & time: Tuesday, November 17, 2026 at 4:00 PM EAT
+      // (ኅዳር 8, 2019 E.C / 7 Jumada al-Thani 1448 AH)
+      defaultDate: '2026-11-17T16:00:00+03:00',
+      
+      // Default couple names (Ethiopic & Latin supported)
+      defaultGroom: 'አብዱረህማን አህመድ',
+      defaultBride: 'ሰዓዳ አሊ',
+
+      // Default Islamic template: 'emerald', 'midnight', 'rose', or 'onyx'
+      defaultTheme: 'emerald',
+
+      // Timezone identifier for international formatting
+      timeZone: 'Africa/Addis_Ababa'
+    };
+
+    // Active state variables
+    let currentWeddingDate = WEDDING_CONFIG.defaultDate;
+    let groomName = WEDDING_CONFIG.defaultGroom;
+    let brideName = WEDDING_CONFIG.defaultBride;
+    let currentTheme = WEDDING_CONFIG.defaultTheme;
+    let particlesEnabled = true;
+    let countdownInterval = null;
+
+    /* ==========================================================================
+       2. INITIALIZATION & URL / LOCALSTORAGE PARAMETERS
+       ========================================================================== */
+    function loadSavedSettings() {
+      // Check URL query parameters first (e.g. ?date=2027-06-20T16:00&groom=...&theme=midnight)
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlDate = urlParams.get('date');
+      const urlGroom = urlParams.get('groom');
+      const urlBride = urlParams.get('bride');
+      const urlTheme = urlParams.get('theme');
+
+      // Check LocalStorage
+      const storedDate = localStorage.getItem('wedding_countdown_date');
+      const storedGroom = localStorage.getItem('wedding_countdown_groom');
+      const storedBride = localStorage.getItem('wedding_countdown_bride');
+      const storedTheme = localStorage.getItem('wedding_countdown_theme');
+
+      // Clear legacy date from localStorage if it was previously set to June 2027
+      if (storedDate && storedDate.startsWith('2027-06-20')) {
+        localStorage.removeItem('wedding_countdown_date');
+        currentWeddingDate = WEDDING_CONFIG.defaultDate;
+      } else if (urlDate) {
+        currentWeddingDate = urlDate;
+      } else if (storedDate) {
+        currentWeddingDate = storedDate;
+      } else {
+        currentWeddingDate = WEDDING_CONFIG.defaultDate;
+      }
+
+      if (urlGroom) groomName = urlGroom;
+      else if (storedGroom) groomName = storedGroom;
+
+      if (urlBride) brideName = urlBride;
+      else if (storedBride) brideName = storedBride;
+
+      if (urlTheme) currentTheme = urlTheme;
+      else if (storedTheme) currentTheme = storedTheme;
+
+      applyTheme(currentTheme);
+      updateDisplayNames();
+      updateDatesDisplay();
+    }
+
+    function updateDisplayNames() {
+      document.getElementById('groomDisplay').textContent = groomName;
+      document.getElementById('brideDisplay').textContent = brideName;
+      document.getElementById('groomInput').value = groomName;
+      document.getElementById('brideInput').value = brideName;
+    }
+
+    /* ==========================================================================
+       3. ETHIOPIAN, GREGORIAN & HIJRI DATE FORMATTING
+       ========================================================================== */
+    function gregorianToEthiopian(date) {
+      const gYear = date.getFullYear();
+      const gMonth = date.getMonth() + 1; // 1-12
+      const gDay = date.getDate();
+
+      const a = Math.floor((14 - gMonth) / 12);
+      const y = gYear + 4800 - a;
+      const m = gMonth + 12 * a - 3;
+      const jdn = gDay + Math.floor((153 * m + 2) / 5) + 365 * y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 32045;
+
+      const r = (jdn - 1723856) % 1461;
+      const n = (r % 365) + 365 * Math.floor(r / 1460);
+      const ethYear = 4 * Math.floor((jdn - 1723856) / 1461) + Math.floor(r / 365) - Math.floor(r / 1460);
+      const ethMonth = Math.floor(n / 30) + 1;
+      const ethDay = (n % 30) + 1;
+
+      const ethMonths = [
+        'መስከረም', 'ጥቅምት', 'ኅዳር', 'ታኅሣሥ', 'ጥር', 'የካቲት',
+        'መጋቢት', 'ሚያዝያ', 'ግንቦት', 'ሰኔ', 'ሐምሌ', 'ነሐሴ', 'ጳጉሜ'
+      ];
+
+      const monthName = ethMonths[ethMonth - 1] || 'ኅዳር';
+      return `${monthName} ${ethDay}, ${ethYear} E.C`;
+    }
+
+    function updateDatesDisplay() {
+      const targetDate = new Date(currentWeddingDate);
+      
+      // 1. Primary Big Amharic / Ethiopian Date
+      const ethiopianDateStr = gregorianToEthiopian(targetDate);
+      const ethElement = document.getElementById('ethiopianDateDisplay');
+      if (ethElement) ethElement.textContent = ethiopianDateStr;
+
+      // 2. Gregorian Date Display (English)
+      const gregorianFormatter = new Intl.DateTimeFormat('en-US', {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+        timeZone: WEDDING_CONFIG.timeZone
+      });
+      const gregElement = document.getElementById('gregorianDateDisplay');
+      if (gregElement) gregElement.textContent = gregorianFormatter.format(targetDate);
+
+      // 3. Hijri Date Display (English & Arabic side by side)
+      const isNov17 = targetDate.getFullYear() === 2026 && targetDate.getMonth() === 10 && targetDate.getDate() === 17;
+      const hijriEnEl = document.getElementById('hijriEnglishDisplay');
+      const hijriArEl = document.getElementById('hijriArabicDisplay');
+
+      if (isNov17) {
+        if (hijriEnEl) hijriEnEl.textContent = '7 Jumada al-Thani 1448 AH';
+        if (hijriArEl) hijriArEl.textContent = '٧ جمادى الآخرة ١٤٤٨ هـ';
+      } else {
+        try {
+          const hijriEnFormatter = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          });
+          const hijriArFormatter = new Intl.DateTimeFormat('ar-u-ca-islamic-umalqura', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          });
+          if (hijriEnEl) hijriEnEl.textContent = hijriEnFormatter.format(targetDate) + ' AH';
+          if (hijriArEl) hijriArEl.textContent = hijriArFormatter.format(targetDate) + ' هـ';
+        } catch (e) {
+          if (hijriEnEl) hijriEnEl.textContent = '7 Jumada al-Thani 1448 AH';
+          if (hijriArEl) hijriArEl.textContent = '٧ جمادى الآخرة ١٤٤٨ هـ';
+        }
+      }
+
+      // Populate input field with local ISO datetime for the picker
+      const tzOffset = targetDate.getTimezoneOffset() * 60000;
+      const localISOTime = (new Date(targetDate.getTime() - tzOffset)).toISOString().slice(0, 16);
+      const dateInput = document.getElementById('weddingDateInput');
+      if (dateInput) dateInput.value = localISOTime;
+    }
+
+    /* ==========================================================================
+       4. COUNTDOWN ENGINE
+       ========================================================================== */
+    function startCountdown() {
+      if (countdownInterval) clearInterval(countdownInterval);
+
+      function update() {
+        const targetMs = new Date(currentWeddingDate).getTime();
+        const nowMs = Date.now();
+        const diff = targetMs - nowMs;
+
+        const activeView = document.getElementById('activeCountdownView');
+        const completionView = document.getElementById('completionView');
+
+        if (diff <= 0) {
+          activeView.style.display = 'none';
+          completionView.style.display = 'flex';
+          clearInterval(countdownInterval);
+          return;
+        }
+
+        activeView.style.display = 'block';
+        completionView.style.display = 'none';
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('daysVal').textContent = String(days).padStart(3, '0');
+        document.getElementById('hoursVal').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutesVal').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('secondsVal').textContent = String(seconds).padStart(2, '0');
+      }
+
+      update();
+      countdownInterval = setInterval(update, 1000);
+    }
+
+    /* ==========================================================================
+       5. ISLAMIC THEME / TEMPLATE SELECTOR
+       ========================================================================== */
+    function setTheme(themeName) {
+      currentTheme = themeName;
+      localStorage.setItem('wedding_countdown_theme', themeName);
+      applyTheme(themeName);
+    }
+
+    function applyTheme(themeName) {
+      if (themeName === 'emerald') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', themeName);
+      }
+
+      document.querySelectorAll('.theme-dot').forEach(dot => {
+        if (dot.getAttribute('data-theme-name') === themeName) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    /* ==========================================================================
+       6. 3D CARD INTERACTIVE TILT & SPECULAR GLARE
+       ========================================================================== */
+    const cardContainer = document.getElementById('cardContainer');
+    const invitationCard = document.getElementById('invitationCard');
+    const glareOverlay = document.getElementById('glareOverlay');
+
+    let bounds;
+    function updateCardBounds() {
+      bounds = cardContainer.getBoundingClientRect();
+    }
+    window.addEventListener('resize', updateCardBounds);
+    window.addEventListener('scroll', updateCardBounds);
+
+    function handleMouseMove(e) {
+      if (!bounds) updateCardBounds();
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      const leftX = mouseX - bounds.x;
+      const topY = mouseY - bounds.y;
+      const center = {
+        x: leftX - bounds.width / 2,
+        y: topY - bounds.height / 2
+      };
+
+      // Subtle, realistic 3D tilt angles (max ~10 degrees)
+      const maxAngle = 10;
+      const rotateX = (center.y / (bounds.height / 2)) * -maxAngle;
+      const rotateY = (center.x / (bounds.width / 2)) * maxAngle;
+
+      cardContainer.style.transform = `perspective(1200px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+
+      // Specular highlight tracking
+      const glareX = ((leftX / bounds.width) * 100).toFixed(1);
+      const glareY = ((topY / bounds.height) * 100).toFixed(1);
+      invitationCard.style.setProperty('--mouse-x', `${glareX}%`);
+      invitationCard.style.setProperty('--mouse-y', `${glareY}%`);
+    }
+
+    function handleMouseLeave() {
+      // Return smoothly to center
+      cardContainer.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg)';
+      invitationCard.style.setProperty('--mouse-x', '50%');
+      invitationCard.style.setProperty('--mouse-y', '50%');
+    }
+
+    cardContainer.addEventListener('mousemove', handleMouseMove);
+    cardContainer.addEventListener('mouseleave', handleMouseLeave);
+
+    // Touch support for 3D tilt
+    cardContainer.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 0) {
+        handleMouseMove(e.touches[0]);
+      }
+    }, { passive: true });
+    cardContainer.addEventListener('touchend', handleMouseLeave);
+
+    /* ==========================================================================
+       7. 3D FLOATING PETALS & STARDUST CANVAS PARTICLES
+       ========================================================================== */
+    const canvas = document.getElementById('particlesCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animationFrameId = null;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.reset(true);
+      }
+
+      reset(initial = false) {
+        this.x = Math.random() * canvas.width;
+        this.y = initial ? Math.random() * canvas.height : -20;
+        this.z = Math.random() * 0.8 + 0.2; // 3D depth factor
+        this.size = (Math.random() * 9 + 4) * this.z;
+        this.type = Math.random() > 0.4 ? 'petal' : 'star'; // Petals or Golden stardust
+        this.speedY = (Math.random() * 0.9 + 0.4) * (this.type === 'petal' ? 1.2 : 0.6);
+        this.speedX = (Math.random() - 0.5) * 0.8;
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotationSpeed = (Math.random() - 0.5) * 0.025;
+        this.opacity = Math.random() * 0.55 + 0.25;
+        this.swayAngle = Math.random() * Math.PI * 2;
+        this.swaySpeed = Math.random() * 0.02 + 0.01;
+      }
+
+      update() {
+        this.swayAngle += this.swaySpeed;
+        this.x += this.speedX + Math.sin(this.swayAngle) * 0.7;
+        this.y += this.speedY;
+        this.rotation += this.rotationSpeed;
+
+        if (this.y > canvas.height + 25 || this.x < -40 || this.x > canvas.width + 40) {
+          this.reset(false);
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.globalAlpha = this.opacity;
+
+        if (this.type === 'petal') {
+          // Soft rose/jasmine wedding petal
+          ctx.fillStyle = currentTheme === 'rose' ? '#e2959d' : (currentTheme === 'emerald' ? '#fae1c3' : '#ffd9b3');
+          ctx.beginPath();
+          ctx.moveTo(0, -this.size);
+          ctx.bezierCurveTo(this.size * 0.8, -this.size * 0.7, this.size * 0.8, this.size * 0.7, 0, this.size);
+          ctx.bezierCurveTo(-this.size * 0.8, this.size * 0.7, -this.size * 0.8, -this.size * 0.7, 0, -this.size);
+          ctx.fill();
+        } else {
+          // Luminous golden Islamic star/stardust
+          ctx.fillStyle = '#ffdf7a';
+          ctx.shadowColor = '#ffd700';
+          ctx.shadowBlur = 8;
+          ctx.beginPath();
+          ctx.arc(0, 0, this.size * 0.35, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+    }
+
+    function initParticles() {
+      const count = window.innerWidth < 600 ? 30 : 65;
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animateParticles() {
+      if (!particlesEnabled) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+      }
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+      animationFrameId = requestAnimationFrame(animateParticles);
+    }
+
+    function toggleParticles() {
+      particlesEnabled = !particlesEnabled;
+      document.getElementById('petalsLabel').textContent = particlesEnabled ? 'Petals On' : 'Petals Off';
+      document.getElementById('togglePetalsBtn').classList.toggle('active', particlesEnabled);
+      if (particlesEnabled) {
+        animateParticles();
+      } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    }
+
+    /* ==========================================================================
+       8. ADMIN AUTHENTICATION & SETTINGS HANDLERS
+       ========================================================================== */
+    const ADMIN_CREDENTIALS = {
+      username: 'admin',
+      password: 'FRUZcru@123'
+    };
+
+    let isAdminLoggedIn = false;
+
+    function checkAdminSession() {
+      const session = localStorage.getItem('wedding_countdown_admin_auth');
+      if (session === 'true') {
+        setAdminUIState(true);
+      } else {
+        setAdminUIState(false);
+      }
+    }
+
+    function setAdminUIState(loggedIn) {
+      isAdminLoggedIn = loggedIn;
+      const adminControlsGroup = document.getElementById('adminControlsGroup');
+      const adminLoginBtn = document.getElementById('adminLoginBtn');
+
+      if (loggedIn) {
+        adminControlsGroup.classList.add('visible');
+        adminLoginBtn.style.display = 'none';
+      } else {
+        adminControlsGroup.classList.remove('visible');
+        adminLoginBtn.style.display = 'inline-flex';
+      }
+    }
+
+    function openLoginModal() {
+      document.getElementById('adminUsernameInput').value = '';
+      document.getElementById('adminPasswordInput').value = '';
+      document.getElementById('loginErrorMsg').style.display = 'none';
+      document.getElementById('loginModal').classList.add('open');
+      setTimeout(() => {
+        document.getElementById('adminUsernameInput').focus();
+      }, 100);
+    }
+
+    function closeLoginModal() {
+      document.getElementById('loginModal').classList.remove('open');
+      document.getElementById('loginErrorMsg').style.display = 'none';
+    }
+
+    // Close login modal when clicking backdrop
+    document.getElementById('loginModal').addEventListener('click', (e) => {
+      if (e.target.id === 'loginModal') {
+        closeLoginModal();
+      }
+    });
+
+    function handleAdminLogin(event) {
+      event.preventDefault();
+      const u = document.getElementById('adminUsernameInput').value.trim();
+      const p = document.getElementById('adminPasswordInput').value;
+
+      if (u === ADMIN_CREDENTIALS.username && p === ADMIN_CREDENTIALS.password) {
+        localStorage.setItem('wedding_countdown_admin_auth', 'true');
+        setAdminUIState(true);
+        closeLoginModal();
+      } else {
+        const errorEl = document.getElementById('loginErrorMsg');
+        errorEl.textContent = 'Incorrect username or password. Please try again.';
+        errorEl.style.display = 'block';
+      }
+    }
+
+    function adminLogout() {
+      localStorage.removeItem('wedding_countdown_admin_auth');
+      setAdminUIState(false);
+      closeSettingsModal();
+    }
+
+    function openSettingsModal() {
+      if (!isAdminLoggedIn) {
+        openLoginModal();
+        return;
+      }
+      updateDatesDisplay();
+      document.getElementById('settingsModal').classList.add('open');
+    }
+
+    function closeSettingsModal() {
+      document.getElementById('settingsModal').classList.remove('open');
+    }
+
+    // Close when clicking modal backdrop
+    document.getElementById('settingsModal').addEventListener('click', (e) => {
+      if (e.target.id === 'settingsModal') {
+        closeSettingsModal();
+      }
+    });
+
+    function addDaysToDate(days) {
+      const current = new Date();
+      current.setDate(current.getDate() + days);
+      current.setHours(16, 0, 0, 0); // 4:00 PM
+      const tzOffset = current.getTimezoneOffset() * 60000;
+      const localISO = (new Date(current.getTime() - tzOffset)).toISOString().slice(0, 16);
+      document.getElementById('weddingDateInput').value = localISO;
+    }
+
+    function resetToDefaultDate() {
+      const defaultDateObj = new Date(WEDDING_CONFIG.defaultDate);
+      const tzOffset = defaultDateObj.getTimezoneOffset() * 60000;
+      const localISO = (new Date(defaultDateObj.getTime() - tzOffset)).toISOString().slice(0, 16);
+      document.getElementById('weddingDateInput').value = localISO;
+    }
+
+    function saveSettings() {
+      const inputVal = document.getElementById('weddingDateInput').value;
+      if (!inputVal) {
+        alert('Please choose a valid wedding date and time.');
+        return;
+      }
+
+      // Convert chosen local datetime into ISO string
+      const chosenDate = new Date(inputVal);
+      currentWeddingDate = chosenDate.toISOString();
+
+      groomName = document.getElementById('groomInput').value.trim() || WEDDING_CONFIG.defaultGroom;
+      brideName = document.getElementById('brideInput').value.trim() || WEDDING_CONFIG.defaultBride;
+
+      // Persist in localStorage
+      localStorage.setItem('wedding_countdown_date', currentWeddingDate);
+      localStorage.setItem('wedding_countdown_groom', groomName);
+      localStorage.setItem('wedding_countdown_bride', brideName);
+
+      // Refresh UI
+      updateDisplayNames();
+      updateDatesDisplay();
+      startCountdown();
+      closeSettingsModal();
+    }
+
+    function copyShareLink() {
+      const inputVal = document.getElementById('weddingDateInput').value;
+      const dateToShare = inputVal ? new Date(inputVal).toISOString() : currentWeddingDate;
+      const groomToShare = document.getElementById('groomInput').value.trim() || groomName;
+      const brideToShare = document.getElementById('brideInput').value.trim() || brideName;
+
+      const shareUrl = new URL(window.location.href);
+      shareUrl.searchParams.set('date', dateToShare);
+      shareUrl.searchParams.set('groom', groomToShare);
+      shareUrl.searchParams.set('bride', brideToShare);
+      shareUrl.searchParams.set('theme', currentTheme);
+
+      navigator.clipboard.writeText(shareUrl.toString()).then(() => {
+        alert('Shareable link copied to clipboard!\nAnyone opening this link will see your chosen date, names, and theme.');
+      }).catch(() => {
+        prompt('Copy your customized wedding countdown link:', shareUrl.toString());
+      });
+    }
+
+    function previewCelebration() {
+      document.getElementById('activeCountdownView').style.display = 'none';
+      document.getElementById('completionView').style.display = 'flex';
+    }
+
+    function resetToCountdown() {
+      document.getElementById('completionView').style.display = 'none';
+      document.getElementById('activeCountdownView').style.display = 'block';
+      startCountdown();
+    }
+
+    /* ==========================================================================
+       STARTUP
+       ========================================================================== */
+    window.addEventListener('DOMContentLoaded', () => {
+      checkAdminSession();
+      loadSavedSettings();
+      startCountdown();
+      initParticles();
+      animateParticles();
+      updateCardBounds();
+    });
+  </script>
+</body>
+
+</html>
