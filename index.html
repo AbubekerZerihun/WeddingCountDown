@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -233,7 +233,7 @@
       border: 1px solid var(--card-border);
       border-radius: 28px;
       box-shadow: var(--card-glow);
-      padding: 38px 28px 36px;
+      padding: 24px 22px 22px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -313,7 +313,7 @@
     /* Bismillah Calligraphy (Top Header) */
     .bismillah-wrapper {
       position: relative;
-      margin-bottom: 12px;
+      margin-bottom: 6px;
       z-index: 2;
       transform: translateZ(25px);
     }
@@ -342,8 +342,8 @@
     /* Quranic Verse Ribbon */
     .quran-ayah {
       max-width: 420px;
-      margin: 4px auto 14px;
-      padding: 8px 14px;
+      margin: 2px auto 6px;
+      padding: 5px 12px;
       background: rgba(0, 0, 0, 0.22);
       border: 1px solid rgba(226, 185, 110, 0.2);
       border-radius: 30px;
@@ -353,7 +353,7 @@
 
     .ayah-arabic {
       font-family: 'Amiri', serif;
-      font-size: 13.5px;
+      font-size: 12px;
       color: var(--gold-light);
       line-height: 1.5;
       margin-bottom: 2px;
@@ -412,13 +412,13 @@
     /* Couple Names Header */
     .names-section {
       transform: translateZ(35px);
-      margin-bottom: 8px;
+      margin-bottom: 2px;
       z-index: 2;
     }
 
     .couples-names {
       font-weight: 700;
-      font-size: clamp(34px, 8.5vw, 46px);
+      font-size: clamp(28px, 7vw, 38px);
       line-height: 1.15;
       letter-spacing: -0.01em;
       background: var(--gold-foil);
@@ -447,13 +447,13 @@
       line-height: 1.8;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin: 10px 0 12px;
+      margin: 4px 0 6px;
       transform: translateZ(22px);
     }
 
     /* Date Badges: Big Amharic + Side-by-Side Gregorian & Hijri */
     .dates-container {
-      margin: 10px 0 18px;
+      margin: 4px 0 8px;
       transform: translateZ(28px);
       z-index: 2;
       width: 100%;
@@ -477,7 +477,7 @@
     /* Primary Big Amharic Date */
     .amharic-primary-date {
       font-family: 'Noto Sans Ethiopic', 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 6.8vw, 38px);
+      font-size: clamp(22px, 5.5vw, 30px);
       font-weight: 700;
       letter-spacing: 0.02em;
       line-height: 1.18;
@@ -485,7 +485,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.75));
-      margin: 4px 0 10px;
+      margin: 2px 0 2px;
     }
 
     /* Side-by-Side Dual Sub-dates: English (Gregorian) & Arabic/English (Hijri) */
@@ -581,8 +581,8 @@
       width: 100%;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin: 14px 0 22px;
+      gap: 8px;
+      margin: 6px 0 10px;
       transform: translateZ(42px);
       z-index: 3;
     }
@@ -634,7 +634,7 @@
 
     .digit-label {
       display: block;
-      margin-top: 6px;
+      margin-top: 3px;
       font-family: 'Montserrat', sans-serif;
       font-size: 8.5px;
       font-weight: 600;
@@ -647,14 +647,14 @@
     /* Quranic Dua & Closing Quote */
     .wedding-dua {
       transform: translateZ(25px);
-      margin-top: 2px;
+      margin-top: 10px;
       padding: 0 10px;
       z-index: 2;
     }
 
     .dua-arabic {
       font-family: 'Amiri', serif;
-      font-size: 17px;
+      font-size: 14px;
       color: var(--gold-primary);
       margin-bottom: 4px;
       line-height: 1.5;
@@ -664,9 +664,84 @@
     .dua-translation {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 15px;
+      font-size: 12px;
       color: var(--text-muted);
       line-height: 1.4;
+    }
+
+    /* Location Section */
+    .location-section {
+      transform: translateZ(25px);
+      margin-top: 10px;
+      width: 100%;
+      max-width: 400px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .location-address {
+      font-family: 'Noto Sans Ethiopic', serif;
+      font-size: clamp(12px, 2.8vw, 14px);
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.6;
+      padding: 10px 16px;
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(226, 185, 110, 0.2);
+      border-radius: 14px;
+      width: 100%;
+    }
+
+    .location-label {
+      font-family: 'Cinzel', 'Montserrat', sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold-secondary);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      background: linear-gradient(135deg, rgba(230, 194, 120, 0.18) 0%, rgba(184, 134, 40, 0.22) 100%);
+      color: var(--gold-light);
+      border: 1px solid rgba(226, 185, 110, 0.45);
+      padding: 11px 26px;
+      border-radius: 30px;
+      font-family: 'Cinzel', 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.28s ease;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 14px rgba(212, 175, 55, 0.15);
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .map-btn:hover {
+      background: linear-gradient(135deg, rgba(230, 194, 120, 0.32) 0%, rgba(184, 134, 40, 0.38) 100%);
+      border-color: var(--gold-primary);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .map-btn svg {
+      flex-shrink: 0;
+      opacity: 0.9;
     }
 
     /* Footer Tagline */
@@ -1285,39 +1360,10 @@
 
           <!-- Dates: Big Amharic + Side-by-Side English (Gregorian) & Arabic/English (Hijri) -->
           <div class="dates-container">
-            <div class="save-the-date-tag">Save The Date</div>
 
             <!-- Primary Big Amharic Date -->
             <div class="amharic-primary-date" id="ethiopianDateDisplay">
               ኅዳር 6, 2019 E.C
-            </div>
-
-            <!-- Gregorian and Hijri Dates -->
-            <div class="dual-subdates-row">
-
-              <!-- Gregorian Calendar -->
-              <div class="subdate-card" title="Gregorian Calendar (G.C.)">
-                <span class="subdate-label">
-                  <span>🗓️</span> G.C.
-                </span>
-                <span class="subdate-val-en" id="gregorianDateDisplay">
-                  Sunday, November 15, 2026
-                </span>
-              </div>
-
-              <!-- Hijri Calendar -->
-              <div class="subdate-card" title="Hijri Calendar (A.H.)">
-                <span class="subdate-label">
-                  <span>🌙</span> Hijri / هجري
-                </span>
-                <span class="subdate-val-en" id="hijriEnglishDisplay">
-                  5 Jumada al-Thani 1448 AH
-                </span>
-                <span class="subdate-val-ar" id="hijriArabicDisplay" lang="ar" dir="rtl">
-                  ٥ جمادى الآخرة ١٤٤٨ هـ
-                </span>
-              </div>
-
             </div>
           </div>
 
@@ -1341,6 +1387,24 @@
             </div>
           </div>
 
+          <!-- Location & Map -->
+          <div class="location-section">
+            <div class="location-address">
+              <div class="location-label">📍 አድራሻ</div>
+              እንቁላል ፋብሪካ አለፍ ብሎ ኖክ ማደያ ፊት ለ ፊት ግርማ ነዋኝ ህንፃ ላይ
+            </div>
+            <a class="map-btn"
+               href="https://maps.google.com/?cid=16761117345456138366&amp;entry=gps"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open location in Google Maps">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Open in Maps
+            </a>
+          </div>
           <!-- Islamic Dua for the Wedding -->
           <div class="wedding-dua">
             <div class="dua-arabic" lang="ar" dir="rtl">بَارَكَ ٱللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ
