@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -669,6 +669,244 @@
       line-height: 1.4;
     }
 
+    /* Photo Gallery Section */
+    .photo-gallery-section {
+      transform: translateZ(30px);
+      margin: 16px 0;
+      width: 100%;
+      max-width: 450px;
+      z-index: 2;
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .gallery-title {
+      font-family: 'Noto Sans Ethiopic', 'Cinzel', serif;
+      font-size: clamp(18px, 4vw, 24px);
+      font-weight: 700;
+      background: var(--gold-foil);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0 0 4px 0;
+      line-height: 1.3;
+    }
+
+    .gallery-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .gallery-carousel {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-slide:hover img {
+      transform: scale(1.05);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .carousel-btn:hover {
+      background: rgba(230, 194, 120, 0.3);
+      border-color: var(--gold-light);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 0 15px rgba(230, 194, 120, 0.4);
+    }
+
+    .carousel-btn-prev {
+      left: 10px;
+    }
+
+    .carousel-btn-next {
+      right: 10px;
+    }
+
+    .carousel-indicators {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .indicator-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(230, 194, 120, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .indicator-dot:hover {
+      background: rgba(230, 194, 120, 0.6);
+      transform: scale(1.2);
+    }
+
+    .indicator-dot.active {
+      background: var(--gold-primary);
+      border-color: var(--gold-light);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    .autoplay-toggle {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(230, 194, 120, 0.4);
+      color: var(--gold-light);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .autoplay-toggle:hover {
+      background: rgba(230, 194, 120, 0.3);
+      border-color: var(--gold-primary);
+      transform: scale(1.1);
+    }
+
+    .autoplay-toggle.playing .play-icon {
+      display: none;
+    }
+
+    .autoplay-toggle.playing .pause-icon {
+      display: block;
+    }
+
+    /* Lightbox for Full Image View */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 300;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .lightbox-overlay.open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.3);
+      border: 2px solid var(--gold-primary);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -50px;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(230, 194, 120, 0.3);
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
     /* Location Section */
     .location-section {
       transform: translateZ(25px);
@@ -693,6 +931,10 @@
       border: 1px solid rgba(226, 185, 110, 0.2);
       border-radius: 14px;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .location-label {
@@ -702,11 +944,9 @@
       text-transform: uppercase;
       letter-spacing: 0.3em;
       color: var(--gold-secondary);
-      margin-bottom: 0px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
+      margin-bottom: 4px;
+      display: block;
+      text-align: center;
     }
 
     .map-btn {
@@ -762,34 +1002,251 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px 10px;
+      padding: 10px;
+      width: 100%;
+      height: 100%;
       transform: translateZ(40px);
       animation: fadeInScale 1s ease forwards;
     }
 
+    .gallery-celebration-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
     .completion-view h2 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(34px, 8vw, 46px);
+      font-size: clamp(28px, 7vw, 38px);
       background: var(--gold-foil);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .completion-dua {
       font-family: 'Amiri', serif;
-      font-size: 24px;
+      font-size: clamp(18px, 4vw, 22px);
       color: var(--gold-primary);
-      margin-bottom: 14px;
+      margin-bottom: 10px;
       line-height: 1.6;
     }
 
     .completion-text {
-      font-size: 17px;
-      line-height: 1.7;
+      font-size: clamp(13px, 3vw, 15px);
+      line-height: 1.6;
       color: var(--text-muted);
-      max-width: 360px;
-      margin: 0 auto 18px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* 3D Circular Photo Gallery */
+    .circular-gallery-container {
+      width: 100%;
+      max-width: 480px;
+      height: 400px;
+      position: relative;
+      perspective: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-scene {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .photo-card {
+      position: absolute;
+      width: 280px;
+      height: 340px;
+      left: 50%;
+      top: 50%;
+      margin-left: -140px;
+      margin-top: -170px;
+      transform-style: preserve-3d;
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      border-radius: 20px;
+      padding: 12px;
+      box-shadow: var(--card-glow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .photo-card:hover .card-inner {
+      border-color: var(--gold-primary);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.4);
+      transform: scale(1.02);
+    }
+
+    .card-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    /* Gallery Controls */
+    .gallery-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: 1px solid rgba(230, 194, 120, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .gallery-nav-btn {
+      background: rgba(230, 194, 120, 0.2);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-nav-btn:hover {
+      background: rgba(230, 194, 120, 0.4);
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(230, 194, 120, 0.5);
+    }
+
+    .gallery-counter {
+      font-family: 'Cinzel', 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .gallery-autoplay-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(230, 194, 120, 0.4);
+      color: var(--gold-light);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .gallery-autoplay-toggle:hover {
+      background: rgba(230, 194, 120, 0.3);
+      border-color: var(--gold-primary);
+      transform: scale(1.1);
+    }
+
+    .gallery-autoplay-toggle.playing .play-icon {
+      display: none;
+    }
+
+    .gallery-autoplay-toggle.playing .pause-icon {
+      display: block;
+    }
+
+    /* Lightbox for Full Image View */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 300;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .lightbox-overlay.open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.3);
+      border: 2px solid var(--gold-primary);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -50px;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(230, 194, 120, 0.3);
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     @keyframes fadeInScale {
@@ -1225,6 +1682,54 @@
         padding: 6px 10px;
         font-size: 10px;
       }
+
+      .gallery-carousel {
+        height: 240px;
+      }
+
+      .carousel-btn {
+        width: 36px;
+        height: 36px;
+      }
+
+      .carousel-btn-prev {
+        left: 6px;
+      }
+
+      .carousel-btn-next {
+        right: 6px;
+      }
+
+      .gallery-title {
+        font-size: 18px;
+      }
+
+      .circular-gallery-container {
+        height: 320px;
+      }
+
+      .photo-card {
+        width: 220px;
+        height: 280px;
+        margin-left: -110px;
+        margin-top: -140px;
+      }
+
+      .gallery-controls {
+        bottom: 10px;
+        gap: 15px;
+        padding: 8px 16px;
+      }
+
+      .gallery-nav-btn {
+        width: 32px;
+        height: 32px;
+      }
+
+      .gallery-counter {
+        font-size: 12px;
+        min-width: 50px;
+      }
     }
   </style>
 </head>
@@ -1391,18 +1896,16 @@
           <div class="location-section">
             <div class="location-address">
               <div class="location-label">አድራሻ</div>
-              እንቁላል ፋብሪካ አለፍ ብሎ ኖክ ማደያ ፊት ለ ፊት ግርማ ነዋኝ ህንፃ ላይ 
+              እንቁላል ፋብሪካ አለፍ ብሎ ኖክ ማደያ ፊት ለ ፊት ግርማ ነዋኝ ህንፃ ላይ
             </div>
             <div class="location-address">
               <div class="location-label">ግብዛ ፕሮግራም</div>
               ከምሽቱ 11፡00 በግርማ ነዋይ ህንፃ ባዘጋጀነው እራት ግብዣ ላይ እንዲገኙ በአክብሮት እንጋብዛለን
             </div>
-            <a class="map-btn"
-               href="https://maps.google.com/?cid=16761117345456138366&amp;entry=gps"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Open location in Google Maps">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <a class="map-btn" href="https://maps.google.com/?cid=16761117345456138366&amp;entry=gps" target="_blank"
+              rel="noopener noreferrer" aria-label="Open location in Google Maps">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
@@ -1418,15 +1921,104 @@
           </div>
         </div>
 
-        <!-- COMPLETION / CELEBRATION VIEW -->
+        <!-- COMPLETION / CELEBRATION VIEW WITH PHOTO GALLERY -->
         <div class="completion-view" id="completionView" aria-live="polite">
-          <div class="rub-el-hizb" style="font-size: 32px; color: var(--gold-primary); margin-bottom: 12px;">۞</div>
-          <h2>Alhamdulillah!</h2>
-          <div class="completion-dua" lang="ar" dir="rtl">بَارَكَ ٱللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ
-            بَيْنَكُمَا فِي خَيْرٍ</div>
-          <p class="completion-text">Our wedding day has arrived! Thank you for surrounding us with your heartfelt
-            prayers and love as we begin our blessed journey together.</p>
-          <button class="ctrl-btn" onclick="resetToCountdown()" style="margin: 0 auto;">View Countdown Again</button>
+          <!-- Gallery Header - Hidden by default, only shown when user wants it -->
+          <div class="gallery-celebration-header" style="display: none;">
+            <div class="rub-el-hizb" style="font-size: 32px; color: var(--gold-primary); margin-bottom: 8px;">۞</div>
+            <h2>Alhamdulillah!</h2>
+            <div class="completion-dua" lang="ar" dir="rtl">بَارَكَ ٱللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ
+              بَيْنَكُمَا فِي خَيْرٍ</div>
+            <p class="completion-text">Our wedding day has arrived! Relive our beautiful memories together.</p>
+          </div>
+
+          <!-- 3D Circular Photo Gallery -->
+          <div class="circular-gallery-container" id="circularGallery">
+            <div class="gallery-scene" id="galleryScene">
+              <div class="photo-card" data-index="0">
+                <div class="card-inner">
+                  <img src="Image/photo_1_2026-11-14_21-31-08.jpg" alt="Wedding Memory 1">
+                </div>
+              </div>
+              <div class="photo-card" data-index="1">
+                <div class="card-inner">
+                  <img src="Image/photo_2_2026-11-14_21-31-08.jpg" alt="Wedding Memory 2">
+                </div>
+              </div>
+              <div class="photo-card" data-index="2">
+                <div class="card-inner">
+                  <img src="Image/photo_3_2026-11-14_21-31-08.jpg" alt="Wedding Memory 3">
+                </div>
+              </div>
+              <div class="photo-card" data-index="3">
+                <div class="card-inner">
+                  <img src="Image/photo_4_2026-11-14_21-31-08.jpg" alt="Wedding Memory 4">
+                </div>
+              </div>
+              <div class="photo-card" data-index="4">
+                <div class="card-inner">
+                  <img src="Image/photo_5_2026-11-14_21-31-08.jpg" alt="Wedding Memory 5">
+                </div>
+              </div>
+              <div class="photo-card" data-index="5">
+                <div class="card-inner">
+                  <img src="Image/photo_6_2026-11-14_21-31-08.jpg" alt="Wedding Memory 6">
+                </div>
+              </div>
+              <div class="photo-card" data-index="6">
+                <div class="card-inner">
+                  <img src="Image/photo_7_2026-11-14_21-31-08.jpg" alt="Wedding Memory 7">
+                </div>
+              </div>
+              <div class="photo-card" data-index="7">
+                <div class="card-inner">
+                  <img src="Image/photo_8_2026-11-14_21-31-08.jpg" alt="Wedding Memory 8">
+                </div>
+              </div>
+              <div class="photo-card" data-index="8">
+                <div class="card-inner">
+                  <img src="Image/photo_9_2026-11-14_21-31-08.jpg" alt="Wedding Memory 9">
+                </div>
+              </div>
+              <div class="photo-card" data-index="9">
+                <div class="card-inner">
+                  <img src="Image/photo_2026-11-12_22-40-56.jpg" alt="Wedding Memory 10">
+                </div>
+              </div>
+            </div>
+
+            <!-- Gallery Controls -->
+            <div class="gallery-controls">
+              <button class="gallery-nav-btn" id="galleryPrevBtn" aria-label="Previous photo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              <div class="gallery-counter" id="galleryCounter">1 / 10</div>
+
+              <button class="gallery-nav-btn" id="galleryNextBtn" aria-label="Next photo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Autoplay Toggle -->
+            <button class="gallery-autoplay-toggle" id="galleryAutoplayToggle" aria-label="Toggle autoplay">
+              <svg class="play-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <svg class="pause-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
+                style="display: none;">
+                <rect x="6" y="4" width="4" height="16"></rect>
+                <rect x="14" y="4" width="4" height="16"></rect>
+              </svg>
+            </button>
+          </div>
+
+          <button class="ctrl-btn" onclick="resetToCountdown()" style="margin: 20px auto 0;">View Countdown
+            Again</button>
         </div>
 
         <div class="card-footer-note">A Blessed Union · Bound in Love & Mercy</div>
@@ -1545,7 +2137,7 @@
           <button type="button" class="chip-btn" onclick="addDaysToDate(30)">+30 Days</button>
           <button type="button" class="chip-btn" onclick="addDaysToDate(90)">+3 Months</button>
           <button type="button" class="chip-btn" onclick="addDaysToDate(180)">+6 Months</button>
-          <button type="button" class="chip-btn" onclick="resetToDefaultDate()">Original (Nov 17, 2026)</button>
+          <button type="button" class="chip-btn" onclick="resetToDefaultDate()">Original (Nov 15, 2026)</button>
         </div>
       </div>
 
@@ -1566,6 +2158,14 @@
     </div>
   </div>
 
+  <!-- Lightbox for Full-Size Image View -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+      <img class="lightbox-image" id="lightboxImage" src="" alt="Full size photo">
+    </div>
+  </div>
+
   <script>
     /* ==========================================================================
        1. WEDDING CONFIGURATION VARIABLE
@@ -1576,7 +2176,9 @@
     const WEDDING_CONFIG = {
       // Default wedding target date & time: Tuesday, November 17, 2026 at 4:00 PM EAT
       // (ኅዳር 8, 2019 E.C / 7 Jumada al-Thani 1448 AH)
-      defaultDate: '2026-11-15T16:00:00+03:00',
+      // TEMPORARY: Set to 15 minutes from now for testing
+      defaultDate: '2026-11-15T17:00:00+03:00',
+
 
       // Default couple names (Ethiopic & Latin supported)
       defaultGroom: 'አብዱረህማን አህመድ',
@@ -2116,12 +2718,166 @@
     function previewCelebration() {
       document.getElementById('activeCountdownView').style.display = 'none';
       document.getElementById('completionView').style.display = 'flex';
+      // Initialize gallery when completion view is shown
+      setTimeout(() => {
+        initCircularGallery();
+        startGalleryAutoplay();
+      }, 500);
     }
 
     function resetToCountdown() {
       document.getElementById('completionView').style.display = 'none';
       document.getElementById('activeCountdownView').style.display = 'block';
+      stopGalleryAutoplay();
       startCountdown();
+    }
+
+    /* ==========================================================================
+       3D CIRCULAR PHOTO GALLERY FUNCTIONALITY
+       ========================================================================== */
+    let galleryCurrentIndex = 0;
+    let galleryAutoplayInterval = null;
+    let galleryIsAutoplayActive = true;
+    const galleryAutoplaySpeed = 3500; // 3.5 seconds per image
+    const totalPhotos = 10;
+
+    function initCircularGallery() {
+      const cards = document.querySelectorAll('.photo-card');
+      const autoplayToggle = document.getElementById('galleryAutoplayToggle');
+
+      if (!cards.length) return;
+
+      // Position cards in a circle
+      positionGalleryCards();
+
+      // Navigation buttons
+      document.getElementById('galleryPrevBtn').addEventListener('click', () => {
+        stopGalleryAutoplay();
+        rotateGallery(-1);
+      });
+
+      document.getElementById('galleryNextBtn').addEventListener('click', () => {
+        stopGalleryAutoplay();
+        rotateGallery(1);
+      });
+
+      // Autoplay toggle
+      autoplayToggle.classList.add('playing');
+      autoplayToggle.addEventListener('click', toggleGalleryAutoplay);
+
+      // Click on card to open lightbox
+      cards.forEach((card, index) => {
+        card.addEventListener('click', () => openGalleryLightbox(index));
+      });
+
+      // Lightbox controls
+      document.getElementById('lightboxClose').addEventListener('click', closeGalleryLightbox);
+      document.getElementById('lightboxOverlay').addEventListener('click', (e) => {
+        if (e.target.id === 'lightboxOverlay') closeGalleryLightbox();
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', handleGalleryKeyboard);
+
+      // Start autoplay
+      startGalleryAutoplay();
+    }
+
+    function positionGalleryCards() {
+      const cards = document.querySelectorAll('.photo-card');
+      const angleStep = 360 / totalPhotos;
+      const radius = 350; // Distance from center
+
+      cards.forEach((card, index) => {
+        const angle = (index - galleryCurrentIndex) * angleStep;
+        const isCenter = index === galleryCurrentIndex;
+
+        // Calculate 3D position
+        const rotateY = angle;
+        const translateZ = isCenter ? 100 : -100;
+        const scale = isCenter ? 1.1 : 0.85;
+        const opacity = isCenter ? 1 : 0.3;
+        const zIndex = isCenter ? 10 : 1;
+
+        card.style.transform = `rotateY(${rotateY}deg) translateZ(${radius}px) scale(${scale})`;
+        card.style.opacity = opacity;
+        card.style.zIndex = zIndex;
+        card.style.pointerEvents = isCenter ? 'auto' : 'none';
+      });
+
+      // Update counter
+      document.getElementById('galleryCounter').textContent = `${galleryCurrentIndex + 1} / ${totalPhotos}`;
+    }
+
+    function rotateGallery(direction) {
+      galleryCurrentIndex += direction;
+      if (galleryCurrentIndex < 0) galleryCurrentIndex = totalPhotos - 1;
+      if (galleryCurrentIndex >= totalPhotos) galleryCurrentIndex = 0;
+
+      positionGalleryCards();
+    }
+
+    function startGalleryAutoplay() {
+      if (galleryAutoplayInterval) return;
+      galleryIsAutoplayActive = true;
+      const toggle = document.getElementById('galleryAutoplayToggle');
+      if (toggle) toggle.classList.add('playing');
+      galleryAutoplayInterval = setInterval(() => rotateGallery(1), galleryAutoplaySpeed);
+    }
+
+    function stopGalleryAutoplay() {
+      if (galleryAutoplayInterval) {
+        clearInterval(galleryAutoplayInterval);
+        galleryAutoplayInterval = null;
+      }
+      galleryIsAutoplayActive = false;
+      const toggle = document.getElementById('galleryAutoplayToggle');
+      if (toggle) toggle.classList.remove('playing');
+    }
+
+    function toggleGalleryAutoplay() {
+      if (galleryIsAutoplayActive) {
+        stopGalleryAutoplay();
+      } else {
+        startGalleryAutoplay();
+      }
+    }
+
+    function openGalleryLightbox(index) {
+      const cards = document.querySelectorAll('.photo-card img');
+      const lightbox = document.getElementById('lightboxOverlay');
+      const lightboxImage = document.getElementById('lightboxImage');
+
+      if (cards[index]) {
+        lightboxImage.src = cards[index].src;
+        lightboxImage.alt = cards[index].alt;
+        lightbox.classList.add('open');
+
+        // Pause autoplay when lightbox is open
+        if (galleryIsAutoplayActive) {
+          stopGalleryAutoplay();
+        }
+      }
+    }
+
+    function closeGalleryLightbox() {
+      const lightbox = document.getElementById('lightboxOverlay');
+      lightbox.classList.remove('open');
+    }
+
+    function handleGalleryKeyboard(e) {
+      const completionView = document.getElementById('completionView');
+      if (!completionView || completionView.style.display === 'none') return;
+
+      if (e.key === 'Escape') closeGalleryLightbox();
+      if (e.key === 'ArrowLeft') {
+        stopGalleryAutoplay();
+        rotateGallery(-1);
+      }
+      if (e.key === 'ArrowRight') {
+        stopGalleryAutoplay();
+        rotateGallery(1);
+      }
     }
 
     /* ==========================================================================
@@ -2134,6 +2890,7 @@
       initParticles();
       animateParticles();
       updateCardBounds();
+      initCircularGallery(); // Initialize circular gallery
     });
   </script>
 </body>
